@@ -1,0 +1,71 @@
+.lk {}
+
+.lk-nav {
+    margin-bottom: 30px;
+}
+
+.lk-button {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #292e35;
+}
+
+.lk-button._active {
+    font-weight: 500;
+    color: #1a9640;
+    border-bottom: 2px solid #1a9640;
+    ;
+}
+
+.profile-list {
+    border-radius: 20px;
+    padding: 35px 39px;
+    background: #f5f6f8;
+}
+
+.form-lk__item {
+    margin-top: 30px;
+}
+
+.form-lk__item label {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #adb3c2;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-lk__item input {
+    border-radius: 100px;
+    padding: 0px 24px;
+    height: 45px;
+    background: #fff;
+    display: flex;
+    max-width: 632px;
+    width: 100%;
+}
+
+.lk-order-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.lk-order-item {
+    border-radius: 20px;
+    padding: 35px 39px;
+    background: #f5f6f8;
+}
+
+@media (max-width: 767px) {
+    .lk-order-list {
+        grid-template-columns: 1fr;
+    }
+
+    .lk-button {
+        font-size: 14px;
+    }
+}

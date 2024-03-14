@@ -1,0 +1,60 @@
+/* input checkbox */
+
+.wpfCheckbox {
+    position: relative;
+}
+
+.wpfCheckbox::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #E6E6E6;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 41px !important;
+    height: 14px;
+}
+
+.wpfCheckbox label {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    left: 0;
+    top: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 2;
+}
+
+.wpfCheckbox input:checked+.wpfCheckbox label {
+    transform: translateX(19px);
+}
+
+.wpfFilterWrapper .wpfCheckbox input[type="checkbox"]:checked+label {
+    transform: translateX(19px);
+    background-color: #FAA6AE;
+}
+
+.wpfFilterVerScroll {
+    display: flex !important;
+    align-items: center !important;
+    gap: 30px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+.wpfLiLabel {
+    display: flex !important;
+    gap: 20px !important;
+    align-items: center !important;
+}
+
+.wpfMainWrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}

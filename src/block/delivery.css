@@ -1,0 +1,60 @@
+.delivery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.delivery__item {
+    border-radius: 20px;
+    padding: 40px;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.delivery__item--left {
+    background: #e8f1eb;
+    background-image: url('../src/img/bg/delivery-img.png');
+    background-position: right bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.delivery__item--right {
+    background: #fff4cf;
+    background-image: url('../src/img/bg/payment-img.png');
+    background-position: right bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.delivery__item h2 {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    color: #292e35;
+    margin-bottom: 30px;
+}
+
+.delivery__item ul {
+    padding-left: 30px;
+    list-style: disc;
+}
+
+@media (max-width: 767px) {
+    .delivery__item h2 {
+        margin-bottom: 10px;
+    }
+
+    .delivery__item {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 1.8;
+        padding-bottom: 100px;
+    }
+}
+
+@media (max-width: 560px) {
+    .delivery {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,133 @@
+.category {
+    padding: 20px 0;
+}
+
+.category-slide>div {
+    padding: 30px 20px;
+    border-radius: 10px;
+    background: #fff4cf;
+}
+
+.category-slide img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 100%;
+    left: -20px;
+}
+
+.swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 100%;
+    right: -20px;
+}
+
+.swiper-button-prev::after {
+    background: url('../src/img/icons/icon-arrow-left.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    left: 15px;
+}
+
+.swiper-button-next::after {
+    background: url('../src/img/icons/icon-arrow-right.svg');
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    left: 20px;
+    transform: rotate(0);
+}
+
+.recommendation-slide {
+    min-height: 200px;
+
+    padding: 30px 20px;
+    min-width: 240px;
+
+    border-radius: 10px;
+    background: #fff4cf;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.recommendation-slide p {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #202020;
+}
+
+.recommendation-slide span {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #baae83;
+}
+
+.all-category__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.category-item {
+    padding: 30px 20px;
+    min-width: 140px;
+
+    border-radius: 10px;
+    background: #fff4cf;
+}
+
+.category-item img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+}
+
+.category-item p {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: #292e35;
+}
+
+@media (max-width: 800px) {
+    .category-item {
+        padding: 20px 20px;
+        min-height: 102px;
+    }
+}
+
+@media (max-width: 499px) {
+    .all-category__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .category-item {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 345px) {
+    .all-category__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

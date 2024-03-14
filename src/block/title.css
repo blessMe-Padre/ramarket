@@ -1,0 +1,7 @@
+.title {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 1.214rem + 1.429vw, 2.5rem);
+    color: #292e35;
+    margin-bottom: clamp(1.25rem, 1.03rem + 0.939vw, 1.875rem);
+}

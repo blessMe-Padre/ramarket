@@ -1,0 +1,264 @@
+.header {
+    padding-top: 15px;
+    position: relative;
+}
+
+.header__buttons {
+    display: flex;
+    gap: 30px;
+}
+
+.header__contact {
+    display: flex;
+    gap: 30px;
+}
+
+.header__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.header__item p {
+    line-height: 1;
+    font-weight: 700;
+}
+
+.header__item a {
+    line-height: 1;
+    font-weight: 700;
+}
+
+.header__inner {
+    position: relative;
+    padding: 25px 0;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header__search {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 25px;
+    background: #f5f6f8;
+    width: 100%;
+    padding: 0 20px;
+    flex: 1 1 auto;
+}
+
+.header__search input {
+    padding: 10px 30px 10px 20px;
+    background: #f5f6f8;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header__lk-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    flex: 0 0 auto;
+
+    border: 1px solid #eef0f3;
+    border-radius: 25px;
+    padding: 10px 30px;
+
+    cursor: pointer;
+}
+
+.header__lk-button span {
+    white-space: nowrap;
+}
+
+.header__modal-wrapper {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: var(--yellow);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease;
+
+    border-radius: 20px;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
+    padding: 20px;
+
+    min-width: 200px;
+}
+
+.header__modal-wrapper.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.catalog-button.is-active .catalog-button-img-1 {
+    display: none;
+}
+
+.catalog-button-img-2 {
+    display: none;
+}
+
+.catalog-button.is-active .catalog-button-img-2 {
+    display: block;
+}
+
+.catalog-menu {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    padding: 30px 40px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+    transition: opacity 0.3s ease;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.catalog-menu.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.catalog-menu li {
+    padding: 30px 20px;
+    min-width: 240px;
+
+    border-radius: 10px;
+    background: #e8f1eb;
+}
+
+.catalog-menu img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.catalog-menu-mobile {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    padding: 30px 40px;
+    border-radius: 20px;
+
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+    transition: opacity 0.3s ease;
+
+    width: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.catalog-menu-mobile.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.catalog-menu-mobile-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.catalog-menu-mobile-list li {
+    border-radius: 10px;
+    padding: 30px 20px;
+    margin-bottom: 10px;
+    background: #e8f1eb;
+    position: relative;
+}
+
+.catalog-menu-mobile-list li img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.catalog-button-menu {
+    display: none;
+}
+
+.catalog-button-catalog {
+    display: flex;
+}
+
+@media (max-width: 1023px) {
+    .header__lk-button {
+        padding: 10px;
+    }
+
+    .header__lk-button img {
+        width: 25px;
+        height: 20px;
+        max-width: none;
+    }
+
+    .header__lk-button--mobile span {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .header__inner {
+        gap: 10px;
+    }
+
+    .header__buttons {
+        gap: 10px;
+
+        position: absolute;
+        top: -30px;
+        right: 20px;
+    }
+
+    .header__logo {
+        width: 95px;
+    }
+
+    .header__contact {
+        display: none;
+    }
+
+    .header__lk-button--mobile {
+        width: 35px;
+        height: 35px;
+    }
+
+    .catalog-button-menu {
+        display: flex;
+    }
+
+    .catalog-button-catalog {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .header__lk-button {
+        padding: 5px;
+    }
+
+    .header__modal-wrapper {
+        min-width: 55vw;
+    }
+}

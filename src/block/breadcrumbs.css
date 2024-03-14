@@ -1,0 +1,20 @@
+.breadcrumbs {
+    padding: 20px 0;
+
+    display: flex;
+    gap: 5px;
+}
+
+.breadcrumbs a {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #adb3c2;
+}
+
+.breadcrumbs span {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #292e35;
+}

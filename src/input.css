@@ -1,0 +1,107 @@
+/* Импорт шрифтов */
+
+
+/* Импорт кастомных стилей для компонентов */
+@import './block/fonts.css';
+@import './block/button.css';
+@import './block/menu-button.css';
+@import './block/menu.css';
+@import './block/swiper.css';
+@import './block/sliders.css';
+@import './block/decor.css';
+@import './block/scrool-top.css';
+@import './block/icons.css';
+@import './block/link.css';
+@import './block/header.css';
+@import './block/hero.css';
+@import './block/category.css';
+@import './block/title.css';
+@import './block/card.css';
+@import './block/about.css';
+@import './block/contact.css';
+@import './block/breadcrumbs.css';
+@import './block/catalog.css';
+@import './block/wpfilters.css';
+@import './block/popup.css';
+@import './block/lk.css';
+@import './block/delivery.css';
+@import './block/requisites.css';
+@import './block/single-product.css';
+@import './block/footer.css';
+
+
+/* Импорт TailWind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Зарегистрируйте пользовательское семейство шрифтов и сообщите браузеру, где его найти. */
+/* @font-face {
+    font-family: 'archangelsk';
+    src: url('../src/fonts/archangelsk.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} */
+
+:root {
+    --white: #ffffff;
+    --black: #292e35;
+    --gray: #abb2be;
+    --green: #1a9640;
+    --light-green: #e8f1eb;
+    --light-gray: #f5f6f8;
+    --red: #e11212;
+    --yellow: #ffdb5a;
+    --dark-gray: #adb3c2;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Futura PT", sans-serif;
+        color: #292e35;
+        font-weight: 400;
+        /* background-color: #454242; */
+    }
+}
+
+@layer components {
+    .container {
+        @apply max-w-[1515px]
+    }
+}
+
+/* Директивы классов */
+
+
+/* Прочие классы */
+
+.lock {
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* tabs start */
+._tabs-block {
+    display: none;
+}
+
+._tabs-block._active {
+    display: block;
+}

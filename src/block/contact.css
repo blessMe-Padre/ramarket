@@ -1,0 +1,13 @@
+.contact__map {
+    background-image: url('../src/img/bg/map.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 600px;
+}
+
+@media (max-width: 767px) {
+    .contact__map {
+        min-height: 260px;
+    }
+}

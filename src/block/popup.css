@@ -1,0 +1,114 @@
+.popup {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 16, 27, .7);
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: opacity 0.3s ease;
+    z-index: -2;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 70;
+}
+
+.popup__body {
+    width: 100%;
+    min-height: 100%;
+    padding: 30px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup__content {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 630px;
+    min-height: 430px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+
+.popup__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+.popup__btn {
+    margin-top: -10px;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: -30px;
+    right: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 100%;
+
+    transition: background-color 0.3s ease;
+    background-color: #201a1a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .popup__title {
+        font-size: 24px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+}
+
+.form-wrapper button {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+
+    border-radius: 25px;
+    padding: 10px 30px;
+    background: #1a9640;
+
+    margin: 40px 0;
+
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.form__item {
+    margin-top: 20px;
+}
+
+.form__item label {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #292e35;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form__item input {
+    border-radius: 100px;
+    padding: 0px 24px;
+    height: 45px;
+    background: #f5f6f8;
+    display: flex;
+    width: 100%;
+}

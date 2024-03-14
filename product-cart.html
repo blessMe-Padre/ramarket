@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>товар</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/baguetteBox.min.css">
+    <link rel=" stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container h-screen grid grid-rows-[auto_1fr_auto]">
+        <header style="background-color: black; color: aliceblue;">header</header>
+
+        <h1 class="visually-hidden">Карточка товара</h1>
+
+        <main>
+            <div class="breadcrumbs">
+                <a href="/">Главная</a>
+                <span>&bull;</span>
+                <span>ЭТО ТОВАР</span>
+            </div>
+
+            <section class="single-product">
+                <h2 class="title">MAYO Mayoner Майонез натуральный с трюфелем (веган, без гютена)</h2>
+
+                <div class="single-product__wrapper">
+                    <div class="single-product__img">
+                        <img src="./src/img/catalog/image-5.jpg" width="470" height="470" alt="фото-продукта">
+                    </div>
+
+                    <div class="single-product__description">
+                        <div class="mb-7">
+                            <span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-yellow">Новинки</span>
+                            <span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-light-green">Эко</span>
+                        </div>
+
+                        <p class="text-xl font-bold mb-5">Пищевая ценность:</p>
+                        <p class="text-lg">Жиры: 24,8 г, Белки: 23 г,</p>
+                        <p class="text-lg mb-5">Калорийность: 291 ккал</p>
+
+                        <p class="text-xl font-bold mb-5">Характеристики:</p>
+
+                        <ul class="single-product__list">
+                            <li>
+                                <p class="font-medium">Страна</p>
+                                <p>Нидерланды, Королевство</p>
+                            </li>
+                            <li>
+                                <p class="font-medium">Производитель</p>
+                                <p>MAYONEUR</p>
+                            </li>
+                            <li>
+                                <p class="font-medium">Объем</p>
+                                <p>250 мл</p>
+                            </li>
+                            <li>
+                                <p class="font-medium">Вид упаковки</p>
+                                <p>пластик</p>
+                            </li>
+                            <li>
+                                <p class="font-medium">Примечание</p>
+                                <p>веган, без глютена, халяль</p>
+                            </li>
+
+                            <li>
+                                <p class="font-medium">Состав</p>
+                                <p>вода, рапсовое масло, 20% манго.</p>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="single-product__cart"></div>
+                </div>
+
+                <div class="_tabs">
+                    <nav class="single-product__nav">
+                        <button class="_tabs-item _active" data-tab="#tab1">О товаре</button> |
+                        <button class="_tabs-item" data-tab="#tab2">Состав</button> |
+                        <button class="_tabs-item" data-tab="#tab3">Условия хранения</button>
+                    </nav>
+
+                    <div class="_tabs-block _active" id="tab1">
+                        <p>Натуральный веганский майонез Мауопеиг с трюфелем -
+                            идеален для тех, кто ценит качество и заботится о своем организме. Приготовленный из
+                            натуральных ингредиентов,
+                            он не содержит глютена и вредных жиров. Это означает, что
+                            наш веганский манговый майонез - безопасный и полезный
+                            соус, который можно смело добавлять в свой рацион.</p>
+                    </div>
+                    <div class="_tabs-block" id="tab2">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatum dignissimos
+                            placeat eaque illo est.</p>
+                    </div>
+                    <div class="_tabs-block" id="tab3">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni non voluptas fuga veritatis
+                            accusamus, deserunt iusto illum enim, velit fugit, quaerat numquam inventore. Dolor hic
+                            consequatur magni optio aut.</p>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer style="background-color: black; color: aliceblue;">footer</footer>
+    </div>
+
+    <div class="scroll-top">
+        <img src="./src/img/up-arrow.svg" alt="стрелка вверх">
+    </div>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/baguettebox.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

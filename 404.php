@@ -3,11 +3,7 @@ get_header();
 ?>
 <main>
     <div class="container">
-        <section class="main">
-            <h1 class="title">Ошибка 404. Такой страницы не существует</h1>
-        </section>
-
-        <section class="relative">
+        <section class="relative section-404">
             <div class="box">
                 <div class="box__ghost">
                     <div class="symbol"></div>
@@ -35,12 +31,11 @@ get_header();
 
                 <div class="box__description">
                     <div class="box__description-container">
-                        <div class="box__description-title">Whoops!</div>
-                        <div class="box__description-text">It seems like we couldn't find the page you were looking
-                            for</div>
+                        <div class="box__description-title">Ошибка 404</div>
+                        <div class="box__description-text">Такой страницы не существует</div>
                     </div>
 
-                    <a href="/" target="_blank" class="box__button">Go back</a>
+                    <a href="/" target="_blank" class="box__button">Вернуться назад</a>
 
                 </div>
 

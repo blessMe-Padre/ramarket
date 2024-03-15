@@ -97,7 +97,10 @@ get_header();
 
                                 echo '<a href="?add-to-cart=' . $product_id . '" class="relative card__to-card button button product_type_simple add_to_cart_button ajax_add_to_cart" data-quantity="1" data-product_id="' . $product_id . '" data-product_sku="' . $product->get_sku() . '" aria-label="' . __('Добавить в корзину', 'domain') . '" rel="nofollow">В корзину</a>';
 
-
+                                echo '<a href="#">';
+                                echo '<img src="' . get_template_directory_uri() . '/src/img/icons/icon-heart.svg"
+                                    width="25" height="25" alt="добавить в избранное">';
+                                echo '</a>';
                                 // echo do_shortcode('[ti_wishlists_addtowishlist product_id="' . $product_id . '" variation_id="0"]');
                                 echo '</div>';
                                 echo '</div>';

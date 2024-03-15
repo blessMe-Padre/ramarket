@@ -40,7 +40,19 @@ function add_menu()
 }
 
 if (class_exists('WooCommerce')) {
-    require_once(get_template_directory() . '/woocommers.php');
+    require_once (get_template_directory() . '/woocommers.php');
 }
+
+// Функция замены текста в кнопках "Добавить в корзину"
+
+add_filter('add_to_cart_text', 'woo_custom_product_add_to_cart_text');            // < 2.1
+add_filter('woocommerce_product_add_to_cart_text', 'woo_custom_product_add_to_cart_text');  // 2.1 +
+
+function woo_custom_product_add_to_cart_text()
+{
+
+    return __('В корзину', 'woocommerce');
+}
+
 
 ?>

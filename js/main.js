@@ -25,4 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initDistance();
 
     // DOMContentLoaded
+
+
+    const variableBtn = document.querySelector('.button product_type_variable');
+    console.log(variableBtn);
 });

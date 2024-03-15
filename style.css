@@ -3589,7 +3589,8 @@ body {
     display: block;
 }
 
-.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
+.button.product_type_simple.add_to_cart_button.ajax_add_to_cart,
+.button.product_type_variable.add_to_cart_button {
     font-family: "Jost", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -3629,7 +3630,9 @@ body {
 }
 
 .woocommerce .added_to_cart.wc-forward {
-    position: absolute;
-    bottom: -20px;
-    left: 13px;
+    width: 25px;
+    height: 25px;
+    font-size: 0;
+    background-image: url('./src/img/icons/icon-cart.svg');
+    background-repeat: no-repeat;
 }

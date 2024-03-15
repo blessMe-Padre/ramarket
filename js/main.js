@@ -8,6 +8,7 @@ import { initAccordionMenu } from "./module/accordions.js";
 import { initPopup } from "./module/popup.js";
 import { initTab } from "./module/tab.js";
 import { initDistance } from "./module/distance.js";
+import { init404 } from "./module/404.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log('подключен скрипт main.js');
@@ -23,10 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initPopup();
     initTab();
     initDistance();
+    init404();
 
     // DOMContentLoaded
 
-
-    const variableBtn = document.querySelector('.button product_type_variable');
-    console.log(variableBtn);
 });

@@ -3649,7 +3649,7 @@ body {
     height: 100%;
     max-height: 600px;
     min-height: 450px;
-    background: #332f63;
+    background: var(--green);
     border-radius: 20px;
     position: relative;
     left: 50%;
@@ -3883,7 +3883,7 @@ body {
 }
 
 .box .box__description .box__description-container .box__description-text {
-    color: #8c8aa7;
+    color: #ffffff;
     line-height: 20px;
     margin-top: 20px;
 }

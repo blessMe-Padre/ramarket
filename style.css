@@ -1070,7 +1070,7 @@ button.swiper-pagination-bullet {
     padding: 5px;
     color: #D1D618;
     border: 2px solid #ffffff;
-    background-color: #D1D618;
+    background-color: #1a9640;
     border-radius: 100%;
     cursor: pointer;
     position: fixed;
@@ -3974,4 +3974,13 @@ body {
     100% {
         opacity: 0.2;
     }
+}
+
+
+/* карточка товара */
+
+.woocommerce-tabs.wc-tabs-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    height: 10px;
 }

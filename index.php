@@ -130,57 +130,52 @@ get_header();
             <div class="w-0 min-w-[100%] relative">
                 <div class="favorite-swiper swiper">
                     <ul class="swiper-wrapper justify-items-stretch">
+                        <?php
+                        $args = array(
+                            'post_type' => 'product',
+                            'posts_per_page' => -1,
+                            'product_cat' => 'favorite', // Замените 'news' на слаг вашей категории
+                        );
 
-                        <ul class="swiper-wrapper justify-items-stretch">
-                            <?php
-                            $args = array(
-                                'post_type' => 'product',
-                                'posts_per_page' => -1,
-                                'product_cat' => 'favorite', // Замените 'news' на слаг вашей категории
-                            );
+                        $loop = new WP_Query($args);
 
-                            $loop = new WP_Query($args);
+                        if ($loop->have_posts()) {
+                            while ($loop->have_posts()):
+                                $loop->the_post();
+                                global $product;
+                                $product_id = get_the_ID();
 
-                            if ($loop->have_posts()) {
-                                while ($loop->have_posts()):
-                                    $loop->the_post();
-                                    global $product;
-                                    $product_id = get_the_ID();
+                                echo '<li class="relative swiper-slide new-slide card h-auto relative card product type-product post-46 status-publish first instock product_cat-new has-post-thumbnail shipping-taxable purchasable product-type-simple woocommerce">';
+                                echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
+                                if (has_post_thumbnail($loop->post->ID)) {
+                                    echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
+                                }
+                                echo '<span class="card__attr mb-5">250 мл</span>';
+                                echo '<h3 class="card__title">' . esc_html($loop->post->post_title) . '</h3>';
+                                echo '</a>';
+                                echo '<div class="flex flex-wrap items-center gap-5">';
+                                echo '<span class="card__price">' . wc_price($product->get_price()) . '</span>';
+                                echo '<div class="flex items-center gap-5 relative">';
 
-                                    echo '<li class="relative swiper-slide new-slide card h-auto relative card product type-product post-46 status-publish first instock product_cat-new has-post-thumbnail shipping-taxable purchasable product-type-simple woocommerce">';
-                                    echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
-                                    if (has_post_thumbnail($loop->post->ID)) {
-                                        echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
-                                    }
-                                    echo '<span class="card__attr mb-5">250 мл</span>';
-                                    echo '<h3 class="card__title">' . esc_html($loop->post->post_title) . '</h3>';
-                                    echo '</a>';
-                                    echo '<div class="flex flex-wrap items-center gap-5">';
-                                    echo '<span class="card__price">' . wc_price($product->get_price()) . '</span>';
-                                    echo '<div class="flex items-center gap-5 relative">';
+                                echo '<a href="?add-to-cart=' . $product_id . '" class="relative card__to-card button button product_type_simple add_to_cart_button ajax_add_to_cart" data-quantity="1" data-product_id="' . $product_id . '" data-product_sku="' . $product->get_sku() . '" aria-label="' . __('Добавить в корзину', 'domain') . '" rel="nofollow">В корзину</a>';
 
-                                    echo '<a href="?add-to-cart=' . $product_id . '" class="relative card__to-card button button product_type_simple add_to_cart_button ajax_add_to_cart" data-quantity="1" data-product_id="' . $product_id . '" data-product_sku="' . $product->get_sku() . '" aria-label="' . __('Добавить в корзину', 'domain') . '" rel="nofollow">В корзину</a>';
-
-                                    echo '<a href="#">';
-                                    echo '<img src="' . get_template_directory_uri() . '/src/img/icons/icon-heart.svg"
+                                echo '<a href="#">';
+                                echo '<img src="' . get_template_directory_uri() . '/src/img/icons/icon-heart.svg"
                                     width="25" height="25" alt="добавить в избранное">';
-                                    echo '</a>';
-                                    // echo do_shortcode('[ti_wishlists_addtowishlist product_id="' . $product_id . '" variation_id="0"]');
-                                    echo '</div>';
-                                    echo '</div>';
-                                    echo '</li>';
+                                echo '</a>';
+                                // echo do_shortcode('[ti_wishlists_addtowishlist product_id="' . $product_id . '" variation_id="0"]');
+                                echo '</div>';
+                                echo '</div>';
+                                echo '</li>';
 
 
-                                endwhile;
-                            } else {
-                                echo __('Товаров не найдено');
-                            }
+                            endwhile;
+                        } else {
+                            echo __('Товаров не найдено');
+                        }
 
-                            wp_reset_postdata();
-                            ?>
-                        </ul>
-
-
+                        wp_reset_postdata();
+                        ?>
                     </ul>
                 </div>
 

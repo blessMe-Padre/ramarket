@@ -3976,6 +3976,9 @@ body {
     }
 }
 
+.term-description {
+    display: none;
+}
 
 /* карточка товара */
 

@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <title> Ra market |
-        <?php the_title(); ?>
-    </title>
+    <title>RA Market</title>   
     <?php wp_head(); ?>
 </head>
 
@@ -174,11 +172,14 @@
                         <div class="header__lk-button">
                             <img src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-cart.svg"
                                 width="20" height="20" alt="cart">
-                            <span>0&nbsp;шт&nbsp;(0&nbsp; ₽)</span>
+                            <span><?php echo minicart_count_after_content(); ?>&nbsp;шт&nbsp;(<?php minicard_subtotal(); ?>)</span>
+                            
                         </div>
 
                         <div class="header__modal-wrapper">
-                            Lorem, ipsum.
+                        <div class="mini-card">
+                                    <?php the_widget('WC_Widget_Cart', 'title=') ?>
+                                </div>
                         </div>
                     </div>
 

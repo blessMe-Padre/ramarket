@@ -28,3 +28,13 @@ function bbloomer_remove_sidebar_product_pages()
         remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
     }
 }
+
+// Подключение функций мини корзины
+if (class_exists('WooCommerce')) {
+    require_once (get_template_directory() . '/woocommers-functions/minicard.php');
+
+    // var_dump(get_template_directory() . '/woocommerce-functions/minicard.php');
+}
+
+
+?>

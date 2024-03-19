@@ -17,8 +17,8 @@ get_header();
         <div class="_tabs">
             <nav class="flex gap-8 lk-nav">
                 <button class="_tabs-item lk-button" data-tab="#tab1">Профиль</button>
-                <button class="_tabs-item lk-button" data-tab="#tab2">История заказов</button>
-                <button class="_tabs-item lk-button _active" data-tab="#tab3">Любимые товары</button>
+                <button class="_tabs-item lk-button _active" data-tab="#tab2">История заказов</button>
+                <button class="_tabs-item lk-button" data-tab="#tab3">Любимые товары</button>
             </nav>
 
             <div class="_tabs-block profile-list" id="tab1">

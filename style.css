@@ -3360,6 +3360,7 @@ body {
 
 ._tabs-block._active {
     display: block;
+    padding: 30px 0;
 }
 
 @media (min-width: 560px) {
@@ -4058,6 +4059,13 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     background-color: var(--green) !important;
     opacity: 0.8 !important;
     color: #ffffff !important;
+}
+
+/* Личный кабинет */
+
+.lk-product-item img {
+    max-width: 60px;
+    max-height: 60px;
 }
 
 /* карточка товара */

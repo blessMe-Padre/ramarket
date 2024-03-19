@@ -68,6 +68,9 @@ if (empty ($product) || !$product->is_visible()) {
 		 */
 		do_action('woocommerce_after_shop_loop_item_title');
 		do_action('woocommerce_after_shop_loop_item');
+		echo '<div class="heart-img-wrapper heart-img-wrapper--list">';
+		echo do_shortcode("[ti_wishlists_addtowishlist loop=yes]");
+		echo '</div>';
 		?>
 	</div>
 </li>

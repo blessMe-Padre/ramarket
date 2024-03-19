@@ -4023,11 +4023,19 @@ button.alt {
     max-height: 40px;
 }
 
+ul.products li.product .tinvwl_add_to_wishlist_button {
+    margin-top: 0 !important;
+}
+
 @media (max-width: 450px) {
     .heart-img-wrapper .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-custom.no-txt {
         position: absolute;
         top: -50px;
         right: 10px;
+    }
+
+    .heart-img-wrapper--list .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-custom.no-txt {
+        position: static;
     }
 }
 

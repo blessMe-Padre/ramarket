@@ -39,6 +39,7 @@ function add_menu()
     register_nav_menu('lk', 'меню личный кабинет');
 }
 
+
 if (class_exists('WooCommerce')) {
     require_once (get_template_directory() . '/woocommers.php');
 }
@@ -53,6 +54,7 @@ function woo_custom_product_add_to_cart_text()
 
     return __('В корзину', 'woocommerce');
 }
+
 
 
 ?>

@@ -37,4 +37,23 @@ if (class_exists('WooCommerce')) {
 }
 
 
+
+// add_filter('woocommerce_default_address_fields', 'custom_override_default_address_fields', 9999);
+
+// function custom_override_default_address_fields($address_fields)
+// {
+//     $address_fields['country']['required'] = false;
+//     $address_fields['first_name']['required'] = false;
+//     $address_fields['last_name']['required'] = false;
+//     $address_fields['address_1']['required'] = false;
+//     $address_fields['address_2']['required'] = false;
+//     $address_fields['city']['required'] = false;
+//     $address_fields['state']['required'] = false;
+//     $address_fields['postcode']['required'] = false;
+
+//     return $address_fields;
+// }
+
+
+
 ?>

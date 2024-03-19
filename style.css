@@ -3591,16 +3591,36 @@ body {
 }
 
 .button.product_type_simple.add_to_cart_button.ajax_add_to_cart,
-.button.product_type_variable.add_to_cart_button {
+.button.product_type_variable.add_to_cart_button,
+button.alt {
     font-family: "Jost", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.3;
     color: #fff;
     border-radius: 30px;
-    padding: 12px 37px 14px 37px;
+    /* padding: 12px 37px 14px 37px; */
+    padding: 12px 18px 14px 18px;
     background: #1a9640;
     margin-top: 0 !important;
+    min-width: 120px;
+    display: block;
+}
+
+.tinvwl-table-manage-list .button,
+.tinvwl-table-manage-list .button.alt {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #fff !important;
+    border-radius: 30px !important;
+    /* padding: 12px 37px 14px 37px; */
+    padding: 12px 18px 14px 18px;
+    background: #1a9640 !important;
+    margin-top: 0 !important;
+    min-width: 120px;
+    display: block;
 }
 
 @media (max-width: 767px) {
@@ -3612,6 +3632,11 @@ body {
         font-size: 14px;
         border-radius: 30px;
         padding: 12px 25px 14px 25px;
+    }
+
+    .button.product_type_simple.add_to_cart_button.ajax_add_to_cart,
+    .button.product_type_variable.add_to_cart_button {
+        font-size: 14px;
     }
 }
 
@@ -3636,6 +3661,13 @@ body {
     font-size: 0;
     background-image: url('./src/img/icons/icon-cart.svg');
     background-repeat: no-repeat;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 450px) {
+    .woocommerce .added_to_cart.wc-forward {
+        display: none;
+    }
 }
 
 
@@ -3980,6 +4012,25 @@ body {
 .term-description {
     display: none;
 }
+
+.heart-img-wrapper .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-custom.no-txt {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.heart-img-wrapper .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-custom.no-txt img {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+@media (max-width: 450px) {
+    .heart-img-wrapper .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-custom.no-txt {
+        position: absolute;
+        top: -50px;
+        right: 10px;
+    }
+}
+
 
 /* карточка товара */
 

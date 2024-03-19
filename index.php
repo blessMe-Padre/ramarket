@@ -93,15 +93,14 @@ get_header();
                                 echo '</a>';
                                 echo '<div class="flex flex-wrap items-center gap-5">';
                                 echo '<span class="card__price">' . wc_price($product->get_price()) . '</span>';
-                                echo '<div class="flex items-center gap-5 relative">';
+                                echo '<div class="flex items-center gap-2 relative">';
 
                                 echo '<a href="?add-to-cart=' . $product_id . '" class="relative card__to-card button button product_type_simple add_to_cart_button ajax_add_to_cart" data-quantity="1" data-product_id="' . $product_id . '" data-product_sku="' . $product->get_sku() . '" aria-label="' . __('Добавить в корзину', 'domain') . '" rel="nofollow">В корзину</a>';
 
-                                echo '<a href="#">';
-                                echo '<img src="' . get_template_directory_uri() . '/src/img/icons/icon-heart.svg"
-                                    width="25" height="25" alt="добавить в избранное">';
-                                echo '</a>';
-                                // echo do_shortcode('[ti_wishlists_addtowishlist product_id="' . $product_id . '" variation_id="0"]');
+                                echo '<div class="heart-img-wrapper">';
+                                echo do_shortcode('[ti_wishlists_addtowishlist]');
+                                echo '</div>';
+
                                 echo '</div>';
                                 echo '</div>';
                                 echo '</li>';
@@ -155,15 +154,14 @@ get_header();
                                 echo '</a>';
                                 echo '<div class="flex flex-wrap items-center gap-5">';
                                 echo '<span class="card__price">' . wc_price($product->get_price()) . '</span>';
-                                echo '<div class="flex items-center gap-5 relative">';
+                                echo '<div class="flex items-center gap-2 relative">';
 
                                 echo '<a href="?add-to-cart=' . $product_id . '" class="relative card__to-card button button product_type_simple add_to_cart_button ajax_add_to_cart" data-quantity="1" data-product_id="' . $product_id . '" data-product_sku="' . $product->get_sku() . '" aria-label="' . __('Добавить в корзину', 'domain') . '" rel="nofollow">В корзину</a>';
 
-                                echo '<a href="#">';
-                                echo '<img src="' . get_template_directory_uri() . '/src/img/icons/icon-heart.svg"
-                                    width="25" height="25" alt="добавить в избранное">';
-                                echo '</a>';
-                                // echo do_shortcode('[ti_wishlists_addtowishlist product_id="' . $product_id . '" variation_id="0"]');
+                                echo '<div class="heart-img-wrapper">';
+                                echo do_shortcode('[ti_wishlists_addtowishlist]');
+                                echo '</div>';
+
                                 echo '</div>';
                                 echo '</div>';
                                 echo '</li>';

@@ -1235,7 +1235,7 @@ button.swiper-pagination-bullet {
     box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
     background: #fff;
     padding: 20px;
-    min-width: 200px;
+    min-width: 260px;
 }
 
 .header__modal-wrapper.is-active {
@@ -1393,7 +1393,7 @@ button.swiper-pagination-bullet {
     }
 
     .header__modal-wrapper {
-        min-width: 55vw;
+        min-width: 65vw;
     }
 }
 
@@ -4039,6 +4039,26 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     }
 }
 
+.woocommerce ul.cart_list li a,
+.woocommerce ul.product_list_widget li a {
+    font-size: 14px;
+}
+
+.woocommerce-mini-cart__buttons.buttons a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    background-color: var(--green);
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+.woocommerce-mini-cart__buttons.buttons a:hover {
+    background-color: var(--green) !important;
+    opacity: 0.8 !important;
+    color: #ffffff !important;
+}
 
 /* карточка товара */
 

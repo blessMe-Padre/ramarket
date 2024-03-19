@@ -55,6 +55,14 @@ function woo_custom_product_add_to_cart_text()
     return __('В корзину', 'woocommerce');
 }
 
+// Замена текста 
+add_filter('gettext', 'translate_text');
+add_filter('ngettext', 'translate_text');
 
+function translate_text($translated)
+{
+    $translated = str_ireplace('Подытог', 'Сумма', $translated);
+    return $translated;
+}
 
 ?>

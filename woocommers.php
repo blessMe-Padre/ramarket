@@ -32,11 +32,12 @@ function bbloomer_remove_sidebar_product_pages()
 // Подключение функций мини корзины
 if (class_exists('WooCommerce')) {
     require_once (get_template_directory() . '/woocommers-functions/minicard.php');
-
-    // var_dump(get_template_directory() . '/woocommerce-functions/minicard.php');
 }
 
-
+// Подключение функций "ЗАКАЗЫ" корзины
+if (class_exists('WooCommerce')) {
+    require_once (get_template_directory() . '/woocommers-functions/order.php');
+}
 
 // add_filter('woocommerce_default_address_fields', 'custom_override_default_address_fields', 9999);
 
@@ -53,6 +54,7 @@ if (class_exists('WooCommerce')) {
 
 //     return $address_fields;
 // }
+
 
 
 

@@ -59,83 +59,12 @@ get_header();
                 </ul>
 
             </div>
-            <div class="_tabs-block" id="tab2">
+            <div class="_tabs-block _active" id="tab2">
                 <ul class="lk-order-list">
-                    <li class="lk-order-item">
-                        <div class="flex justify-between mb-5">
-                            <div>
-                                <span class="font-medium block">Заказ №100132</span>
-                                <span class="text-lg font-bold">20 апреля</span>
-                            </div>
-                            <span class="text-xl font-bold">7 150 ₽</span>
-                        </div>
-                        <p class="text-dark-gray mb-5">7 товаров (0,7 кг)</p>
-                        <div class="flex flex-wrap gap-5 items-center justify-between">
-                            <ul class="flex gap-3">
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                            </ul>
-                            <button class="lk-order-item-button">
-                                <span>Повторить</span>
-                                <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M8.60654 2.22266C11.2793 2.91714 13.249 5.3026 13.249 8.13859C13.249 11.5187 10.451 14.2588 6.99952 14.2588C3.54801 14.2588 0.75 11.5187 0.75 8.13859C0.75 5.3026 2.71972 2.91714 5.3925 2.22266"
-                                        stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M4.43945 1.44922L5.86995 2.21005L5.10912 3.64055" stroke="white"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-
-                        </div>
-                    </li>
-                    <li class="lk-order-item">
-                        <div class="flex justify-between mb-5">
-                            <div>
-                                <span class="font-medium block">Заказ №100132</span>
-                                <span class="text-lg font-bold">20 апреля</span>
-                            </div>
-                            <span class="text-xl font-bold">7 150 ₽</span>
-                        </div>
-                        <p class="text-dark-gray mb-5">7 товаров (0,7 кг)</p>
-                        <div class="flex flex-wrap gap-5 items-center justify-between">
-                            <ul class="flex gap-3">
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/src/img/order-img.png"
-                                        width="60" height="60" alt="img"></li>
-                            </ul>
-                            <button class="lk-order-item-button">
-                                <span>Повторить</span>
-                                <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M8.60654 2.22266C11.2793 2.91714 13.249 5.3026 13.249 8.13859C13.249 11.5187 10.451 14.2588 6.99952 14.2588C3.54801 14.2588 0.75 11.5187 0.75 8.13859C0.75 5.3026 2.71972 2.91714 5.3925 2.22266"
-                                        stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M4.43945 1.44922L5.86995 2.21005L5.10912 3.64055" stroke="white"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-
-                        </div>
-                    </li>
+                    <?php echo show_user_order($user_id); ?>
                 </ul>
             </div>
-            <div class="_tabs-block _active" id="tab3">
+            <div class="_tabs-block" id="tab3">
                 <ul class="catalog__list">
                     <li class="relative new-slide card catalog__list-item">
                         <a href="#">

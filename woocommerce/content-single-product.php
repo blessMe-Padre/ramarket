@@ -15,7 +15,7 @@
  * @version 3.6.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 global $product;
 
@@ -24,14 +24,14 @@ global $product;
  *
  * @hooked woocommerce_output_all_notices - 10
  */
-do_action( 'woocommerce_before_single_product' );
+do_action('woocommerce_before_single_product');
 
-if ( post_password_required() ) {
+if (post_password_required()) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
 ?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
 
 	<?php
 	/**
@@ -40,10 +40,11 @@ if ( post_password_required() ) {
 	 * @hooked woocommerce_show_product_sale_flash - 10
 	 * @hooked woocommerce_show_product_images - 20
 	 */
-	do_action( 'woocommerce_before_single_product_summary' );
+	do_action('woocommerce_before_single_product_summary');
 	?>
 
 	<div class="summary entry-summary">
+		
 		<?php
 		/**
 		 * Hook: woocommerce_single_product_summary.
@@ -57,10 +58,51 @@ if ( post_password_required() ) {
 		 * @hooked woocommerce_template_single_sharing - 50
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
-		do_action( 'woocommerce_single_product_summary' );
+		do_action('woocommerce_single_product_summary');
 		?>
+		
 	</div>
+	<div class="single-product__description">
+		<div class="mb-7">
+			<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-yellow">Новинки</span>
+			<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-light-green">Эко</span>
+		</div>
 
+		<p class="text-xl font-bold mb-5">Пищевая ценность:</p>
+		<p class="text-lg">Жиры: 24,8 г, Белки: 23 г,</p>
+		<p class="text-lg mb-5">Калорийность: 291 ккал</p>
+
+		<p class="text-xl font-bold mb-5">Характеристики:</p>
+
+		<ul class="single-product__list">
+			<li>
+				<p class="font-medium">Страна</p>
+				<p>Нидерланды, Королевство</p>
+			</li>
+			<li>
+				<p class="font-medium">Производитель</p>
+				<p>MAYONEUR</p>
+			</li>
+			<li>
+				<p class="font-medium">Объем</p>
+				<p>250 мл</p>
+			</li>
+			<li>
+				<p class="font-medium">Вид упаковки</p>
+				<p>пластик</p>
+			</li>
+			<li>
+				<p class="font-medium">Примечание</p>
+				<p>веган, без глютена, халяль</p>
+			</li>
+
+			<li>
+				<p class="font-medium">Состав</p>
+				<p>вода, рапсовое масло, 20% манго.</p>
+			</li>
+		</ul>
+
+	</div>
 	<?php
 	/**
 	 * Hook: woocommerce_after_single_product_summary.
@@ -69,8 +111,9 @@ if ( post_password_required() ) {
 	 * @hooked woocommerce_upsell_display - 15
 	 * @hooked woocommerce_output_related_products - 20
 	 */
-	do_action( 'woocommerce_after_single_product_summary' );
+	do_action('woocommerce_after_single_product_summary');
 	?>
+
 </div>
 
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+<?php do_action('woocommerce_after_single_product'); ?>

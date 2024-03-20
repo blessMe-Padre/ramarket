@@ -59,9 +59,6 @@ function show_user_order($user_id)
             )
         );
 
-
-
-
         if ($customer_orders) {
             foreach ($customer_orders as $order) {
 
@@ -105,11 +102,21 @@ function show_user_order($user_id)
                 echo '        </div>';
                 echo "       <span class='text-xl font-bold'>{$formatted_price} &#x20bd</span>";
                 echo '    </div>';
-                echo "   <p class='text-dark-gray mb-5'> {$items_count} товаров (0,7 кг)</p>";
+
+                // Вес товаров
+                $order_items = $order->get_items();
+                $total_weight = 0;
+
+                foreach ($order->get_items() as $item_id => $item) {
+                    $product_item = $item->get_product();
+                    $weight = $product_item->get_weight();
+                    $total_weight += $weight;
+                }
+                echo "<p class='text-dark-gray mb-5'> {$items_count} товаров ({$total_weight} кг)</p>";
                 echo '    <div class="flex flex-wrap gap-5 items-center justify-between">';
                 echo '       <ul class="flex gap-3">';
 
-                // foreach ($order->get_items() as $item_id => $item) {
+                // изображение продуктов внутри заказа
                 foreach ($order->get_items() as $item_id => $item) {
                     $product = $item->get_product();
                     $product_image = $product->get_image();

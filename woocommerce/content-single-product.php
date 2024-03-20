@@ -32,7 +32,7 @@ if (post_password_required()) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
-
+	<div class="single-product__wrapper">
 	<?php
 	/**
 	 * Hook: woocommerce_before_single_product_summary.
@@ -44,24 +44,25 @@ if (post_password_required()) {
 	?>
 
 	<div class="summary entry-summary">
-		
-		<?php
-		/**
-		 * Hook: woocommerce_single_product_summary.
-		 *
-		 * @hooked woocommerce_template_single_title - 5
-		 * @hooked woocommerce_template_single_rating - 10
-		 * @hooked woocommerce_template_single_price - 10
-		 * @hooked woocommerce_template_single_excerpt - 20
-		 * @hooked woocommerce_template_single_add_to_cart - 30
-		 * @hooked woocommerce_template_single_meta - 40
-		 * @hooked woocommerce_template_single_sharing - 50
-		 * @hooked WC_Structured_Data::generate_product_data() - 60
-		 */
-		do_action('woocommerce_single_product_summary');
-		?>
-		
+		<div class="entry-summary-wrapper">
+			<?php
+			/**
+			 * Hook: woocommerce_single_product_summary.
+			 *
+			 * @hooked woocommerce_template_single_title - 5
+			 * @hooked woocommerce_template_single_rating - 10
+			 * @hooked woocommerce_template_single_price - 10
+			 * @hooked woocommerce_template_single_excerpt - 20
+			 * @hooked woocommerce_template_single_add_to_cart - 30
+			 * @hooked woocommerce_template_single_meta - 40
+			 * @hooked woocommerce_template_single_sharing - 50
+			 * @hooked WC_Structured_Data::generate_product_data() - 60
+			 */
+			do_action('woocommerce_single_product_summary');
+			?>
+		</div>
 	</div>
+
 	<div class="single-product__description">
 		<div class="mb-7">
 			<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-yellow">Новинки</span>
@@ -102,7 +103,11 @@ if (post_password_required()) {
 			</li>
 		</ul>
 
+	
 	</div>
+
+	</div>
+
 	<?php
 	/**
 	 * Hook: woocommerce_after_single_product_summary.

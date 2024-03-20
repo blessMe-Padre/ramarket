@@ -4076,10 +4076,34 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     height: 10px;
 }
 
+.single-product__description {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.quantity {
+    margin-bottom: 10px !important;
+}
+
+.single_add_to_cart_button.button {
+    border: none !important;
+    color: var(--white) !important;
+    background-color: var(--green) !important;
+    border-radius: 25px !important;
+    padding: 10px 15px 10px 15px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.entry-summary-wrapper {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--light-gray);
+    border-radius: 20px;
+}
 
 /*  Личный кабинет -> Профиль*/
-.profile_box
-{
+.profile_box {
     display: flex;
     gap: 20px;
 }
@@ -4115,16 +4139,14 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     max-width: none;
 }
 
-.form-lk__item .form-lk__field
-{
+.form-lk__item .form-lk__field {
     width: 100%;
     position: relative;
 }
 
 .form-lk__item .edit,
 .form-lk__item .submit,
-.form-lk__item .cancel
-{
+.form-lk__item .cancel {
     position: absolute;
     top: 50%;
     width: 24px;
@@ -4136,22 +4158,19 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     cursor: pointer;
 }
 
-.form-lk__item .edit
-{
+.form-lk__item .edit {
     right: 21px;
     mask-image: url(/wp-content/themes/ramarket/src/img/edit.svg);
     background-color: #c2c3ca;
 }
 
-.form-lk__item .submit
-{
+.form-lk__item .submit {
     right: 50px;
     mask-image: url(/wp-content/themes/ramarket/src/img/save.svg);
     background-color: #4ab33e;
 }
 
-.form-lk__item .cancel
-{
+.form-lk__item .cancel {
     right: 21px;
     mask-image: url(/wp-content/themes/ramarket/src/img/close.svg);
     background-color: #d74242;

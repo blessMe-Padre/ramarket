@@ -147,7 +147,7 @@ function show_user_order($user_id)
         }
     } else {
         // тут поменять адрес страницы 
-        echo '<p class="auth-wrapper">Вы должны быть <a href="http://manicur/?page_id=48"><span>авторизованны</span></a></p>';
+        echo '<p class="auth-wrapper">Вы должны быть <a href="https://ra-market.ru/login/"><span>авторизованны</span></a></p>';
     }
 }
 

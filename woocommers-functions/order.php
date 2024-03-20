@@ -151,4 +151,80 @@ function show_user_order($user_id)
     }
 }
 
+// Функция отрисовки инпутов "ПРОФИЛЯ -> Ваши данные"
+
+function add_custom_field($type)
+{
+    $user = wp_get_current_user();
+
+    $field = '<form class="form-lk" action="#" method="post">';
+    $field .= '<div class="form-lk__field">';
+    switch ($type) {
+        case 'user_name':
+            $input_value = esc_attr($user->first_name);
+            break;
+        case 'user_email':
+            $input_type = 'email';
+            $input_value = $user->user_email;
+            break;
+        case 'user_birth':
+            $input_type = 'date';
+            $input_value = $user->birth;
+            $styles = 'padding-right: 76px;';
+            break;
+        case 'user_pass':
+            $input_type = 'password';
+            break;
+        case 'user_address':
+            $input_value = esc_attr($user->billing_address_1);
+            break;
+        case 'user_phone':
+            $input_type = 'tel';
+            $input_value = esc_attr($user->billing_phone);
+            break;
+    }
+
+    $field .= '<input id="' . $type . '" class="input_field" type="' . (isset ($input_type) ? $input_type : 'text') . '" name="' . $type . '" value="' . (isset ($input_value) ? $input_value : '') . '" disabled' . (isset ($styles) ? ' style="' . $styles . '"' : '') . ' />';
+    $field .= wp_nonce_field('save_account_details_access');
+    $field .= '<div class="edit"></div>';
+    //$field  .=          '<div class="submit hidden"></div>';
+    $field .= '<button type="submit" name="save_account_details" class="submit hidden"></button>';
+    $field .= '<div class="cancel hidden"></div>';
+    $field .= '</div>';
+    $field .= '</form>';
+
+    return $field;
+}
+
+// Функция обработки инпутов
+add_action('init', 'handle_custom_name_fields_form_submission');
+function handle_custom_name_fields_form_submission()
+{
+    if (isset ($_POST['save_account_details']) && wp_verify_nonce($_POST['_wpnonce'], 'save_account_details_access')) {
+        $customer_id = get_current_user_id();
+
+        if (isset ($_POST['user_name'])) {
+            update_user_meta($customer_id, 'first_name', sanitize_text_field($_POST['user_name']));
+        } elseif (isset ($_POST['user_email'])) {
+            $email = sanitize_email($_POST['user_email']);
+            if (is_email($email)) {
+                wp_update_user(
+                    array(
+                        'ID' => $customer_id,
+                        'user_email' => $email
+                    )
+                );
+            } else {
+                print_r("Введите корректный адрес почты");
+            }
+        } elseif (isset ($_POST['user_birth'])) {
+            update_user_meta($customer_id, 'birth', sanitize_text_field($_POST['user_birth']));
+        } elseif (isset ($_POST['user_phone'])) {
+            update_user_meta($customer_id, 'billing_phone', sanitize_text_field($_POST['user_phone']));
+        } elseif (isset ($_POST['user_address'])) {
+            update_user_meta($customer_id, 'billing_address_1', sanitize_text_field($_POST['user_address']));
+        }
+    }
+}
+
 ?>

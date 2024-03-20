@@ -18,6 +18,7 @@
 defined('ABSPATH') || exit;
 
 global $product;
+$product_title = $product->get_title();
 
 /**
  * Hook: woocommerce_before_single_product.
@@ -32,6 +33,10 @@ if (post_password_required()) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
+
+	 <h1 class="title"><?php echo $product_title ?></h1>
+	 
+
 	<div class="single-product__wrapper">
 	<?php
 	/**
@@ -102,8 +107,6 @@ if (post_password_required()) {
 				<p>вода, рапсовое масло, 20% манго.</p>
 			</li>
 		</ul>
-
-	
 	</div>
 
 	</div>

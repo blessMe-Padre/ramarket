@@ -83,7 +83,7 @@ get_header();
             </div>
             <div class="_tabs-block" id="tab3">
                 <ul class="catalog__list">
-                <?php show_favorite_product($user_id); ?>
+                <?php echo show_favorite_product($user_id); ?>
                 </ul>
             </div>
         </div>

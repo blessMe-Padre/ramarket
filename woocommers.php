@@ -60,7 +60,13 @@ if (class_exists('WooCommerce')) {
 //     return $address_fields;
 // }
 
+// отключает вывод заголовка на странице карточки товара
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+// add_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 15 );
 
-
-
+// add_action('woocommerce_single_product_summary', 'add_some_text', 5);
+// function add_some_text()
+// {
+//     echo '222222222222222222222';
+// }
 ?>

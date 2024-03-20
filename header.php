@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="wrapper">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> class="wrapper">
+<body <?php body_class(); ?>>
     <div class="h-screen grid grid-rows-[auto_1fr_auto]">
         <header class="z-10 w-full md-28 transition-colors header">
             <div class="container gap-5 items-center justify-between flex md:pt-2">

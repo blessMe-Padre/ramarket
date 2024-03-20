@@ -112,7 +112,21 @@ function show_user_order($user_id)
                     $weight = $product_item->get_weight();
                     $total_weight += $weight;
                 }
-                echo "<p class='text-dark-gray mb-5'> {$items_count} товаров ({$total_weight} кг)</p>";
+                
+                if(($items_count%100 < 10 || $items_count%100 > 20) && in_array($items_count%10, array(1)))
+                {
+                    $suffix = 'товар';
+                }
+                else if(($items_count%100 < 10 || $items_count%100 > 20) && in_array($items_count%10, array(2, 3, 4)))
+                {
+                    $suffix = 'товара';
+                }
+                else
+                {
+                    $suffix = 'товаров';
+                }
+                
+                echo "<p class='text-dark-gray mb-5'> {$items_count} {$suffix} ({$total_weight} кг)</p>";
                 echo '    <div class="flex flex-wrap gap-5 items-center justify-between">';
                 echo '       <ul class="flex gap-3">';
 

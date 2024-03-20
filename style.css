@@ -4102,6 +4102,36 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     border-radius: 20px;
 }
 
+.woocommerce div.product form.cart div.quantity {
+    float: none !important;
+}
+
+.button-single-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.summary.entry-summary .price {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.woocommerce-product-gallery.woocommerce-product-gallery--with-images.woocommerce-product-gallery--columns-4.images {
+    width: 100%;
+}
+
+.woocommerce-product-gallery__wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.woocommerce div.product div.images img {
+    width: fit-content !important;
+    max-width: none !important;
+}
+
 /*  Личный кабинет -> Профиль*/
 .profile_box {
     display: flex;

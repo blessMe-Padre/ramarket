@@ -4075,3 +4075,84 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     visibility: hidden;
     height: 10px;
 }
+
+
+/*  Личный кабинет -> Профиль*/
+.profile_box
+{
+    display: flex;
+    gap: 20px;
+}
+
+.profile-list {
+    border-radius: 20px;
+    padding: 35px 39px;
+    background: #f5f6f8;
+    flex: 1;
+}
+
+.form-lk__item {
+    margin-top: 30px;
+}
+
+.form-lk__item .form-lk__title {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #adb3c2;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-lk__item input {
+    border-radius: 100px;
+    padding: 0px 24px;
+    height: 45px;
+    background: #fff;
+    width: 100%;
+    display: inline-block;
+    max-width: none;
+}
+
+.form-lk__item .form-lk__field
+{
+    width: 100%;
+    position: relative;
+}
+
+.form-lk__item .edit,
+.form-lk__item .submit,
+.form-lk__item .cancel
+{
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    transform: translate(0px, -50%);
+    cursor: pointer;
+}
+
+.form-lk__item .edit
+{
+    right: 21px;
+    mask-image: url(/wp-content/themes/ramarket/src/img/edit.svg);
+    background-color: #c2c3ca;
+}
+
+.form-lk__item .submit
+{
+    right: 50px;
+    mask-image: url(/wp-content/themes/ramarket/src/img/save.svg);
+    background-color: #4ab33e;
+}
+
+.form-lk__item .cancel
+{
+    right: 21px;
+    mask-image: url(/wp-content/themes/ramarket/src/img/close.svg);
+    background-color: #d74242;
+}

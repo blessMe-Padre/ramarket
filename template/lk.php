@@ -12,59 +12,76 @@ get_header();
             <span>Личный кабинет</span>
         </div>
 
-        <h1 class="font-semibold text-4xl mb-8">Привет, Иван!</h1>
+        <h1 class="font-semibold text-4xl mb-8">Привет, <?php echo wp_get_current_user()->first_name; ?>!</h1>
 
         <div class="_tabs">
             <nav class="flex gap-8 lk-nav">
-                <button class="_tabs-item lk-button" data-tab="#tab1">Профиль</button>
+                <button class="_tabs-item lk-button _active" data-tab="#tab1">Профиль</button>
                 <button class="_tabs-item lk-button" data-tab="#tab2">История заказов</button>
-                <button class="_tabs-item lk-button _active" data-tab="#tab3">Любимые товары</button>
+                <button class="_tabs-item lk-button" data-tab="#tab3">Любимые товары</button>
             </nav>
 
-            <div class="_tabs-block profile-list" id="tab1">
-                <h2 class="font-bold">Ваши данные</h2>
-                <ul>
-                    <li>
-                        <form class="form-lk" action="#">
-                            <div class="form-lk__item">
+            <div class="_tabs-block _active" id="tab1">
+                <div class="profile_box">
+                    <div class="profile-list">
+                        <h2 class="font-bold">Ваши данные</h2>
+
+                        <ul>
+                            <li>
                                 <div class="form-lk__item">
-                                    <label for="formName">Введите имя</label>
-                                    <input id="formName" type="text" name="name">
-                                </div>
-                            </div>
+                                    <div class="form-lk__title">Введите имя</div>
 
-                            <div class="form-lk__item">
+                                    <?php echo add_custom_field('user_name'); ?>
+                                </div>
+
                                 <div class="form-lk__item">
-                                    <label for="formName">Электронная почта</label>
-                                    <input id="formName" type="email" name="email">
-                                </div>
-                            </div>
+                                    <div class="form-lk__title">Электронная почта</div>
 
-                            <div class="form-lk__item">
+                                    <?php echo add_custom_field('user_email'); ?>
+                                </div>
+
                                 <div class="form-lk__item">
-                                    <label for="formName">Дата рождения</label>
-                                    <input id="formName" type="date" name="date">
-                                </div>
-                            </div>
+                                    <div class="form-lk__title">Телефон</div>
 
-                            <div class="form-lk__item">
+                                    <?php echo add_custom_field('user_phone'); ?>
+                                </div>
+
                                 <div class="form-lk__item">
-                                    <label for="formName">Пароль</label>
-                                    <input id="formName" type="password" name="password">
+                                    <div class="form-lk__title">Дата рождения</div>
+
+                                    <?php echo add_custom_field('user_birth'); ?>
                                 </div>
-                            </div>
 
-                        </form>
-                    </li>
-                </ul>
+                                <!--<div class="form-lk__item">
+                                    <div class="form-lk__title">Пароль</div>
 
+                                    <?php //echo add_custom_field('user_pass');   ?>
+                                </div>-->
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="profile-list">
+                        <h2 class="font-bold">Адрес доставки</h2>
+
+                        <ul>
+                            <li>
+                                <div class="form-lk__item">
+                                    <div class="form-lk__title">Город, улица и дом</div>
+
+                                    <?php echo add_custom_field('user_address'); ?>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="_tabs-block" id="tab2">
                 <ul class="lk-order-list">
                     <?php echo show_user_order($user_id); ?>
                 </ul>
             </div>
-            <div class="_tabs-block _active" id="tab3">
+            <div class="_tabs-block" id="tab3">
                 <ul class="catalog__list">
                 <?php show_favorite_product($user_id); ?>
                 </ul>

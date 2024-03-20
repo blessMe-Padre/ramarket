@@ -9,6 +9,7 @@ import { initPopup } from "./module/popup.js";
 import { initTab } from "./module/tab.js";
 import { initDistance } from "./module/distance.js";
 import { init404 } from "./module/404.js";
+import { initLk } from "./module/lk.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log('подключен скрипт main.js');
@@ -25,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initTab();
     initDistance();
     init404();
-
+    initLk();
     // DOMContentLoaded
 
 });

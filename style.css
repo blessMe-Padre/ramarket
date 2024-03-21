@@ -1699,11 +1699,10 @@ button.swiper-pagination-bullet {
     content: '';
     position: absolute;
     height: 6px;
-    width: 10px;
+    width: 18px;
     top: 8px;
     right: 10px;
-    background-image: url(//compass25.ru/wp-content/themes/compass-theme/src/img/arrow-up.svg);
-    /* background-image: url('./src/img/arrow-up-1.svg'); */
+    background-image: url('./src/img/link-arrow-up.svg');
     background-repeat: no-repeat;
     transition: all .3s ease;
 }

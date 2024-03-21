@@ -44,6 +44,12 @@ if (class_exists('WooCommerce')) {
     require_once (get_template_directory() . '/woocommers-functions/get-favorite.php');
 }
 
+// Подключение функций "ОТЗЫВЫ"
+if (class_exists('WooCommerce')) {
+    require_once (get_template_directory() . '/woocommers-functions/reviews.php');
+}
+
+
 // add_filter('woocommerce_default_address_fields', 'custom_override_default_address_fields', 9999);
 
 // function custom_override_default_address_fields($address_fields)

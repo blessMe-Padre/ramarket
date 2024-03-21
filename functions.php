@@ -22,7 +22,7 @@ function theme_add_scripts()
 
 
     // подключаем основной файл стилей темы
-    wp_enqueue_style('style', get_stylesheet_uri(), '', '0.0.4');
+    wp_enqueue_style('style', get_stylesheet_uri(), '', '0.0.5');
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -37,6 +37,7 @@ function add_menu()
 {
     register_nav_menu('top', 'главное меню сайта');
     register_nav_menu('lk', 'меню личный кабинет');
+    register_nav_menu('category', 'Категории каталога');
 }
 
 
@@ -64,7 +65,5 @@ function translate_text($translated)
     $translated = str_ireplace('Подытог', 'Сумма', $translated);
     return $translated;
 }
-
-
 
 ?>

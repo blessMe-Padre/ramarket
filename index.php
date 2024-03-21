@@ -72,7 +72,7 @@ get_header();
                         $args = array(
                             'post_type' => 'product',
                             'posts_per_page' => -1,
-                            'product_cat' => 'new', // Замените 'news' на слаг вашей категории
+                            'product_cat' => 'новые-товары', // Замените 'news' на слаг вашей категории
                         );
 
                         $loop = new WP_Query($args);
@@ -87,7 +87,10 @@ get_header();
                                 echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
                                 if (has_post_thumbnail($loop->post->ID)) {
                                     echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
+                                } else {
+                                    echo '<img src="' . get_template_directory_uri() . '/src/img/woocommerce-placeholder-300x300.png" alt="">';
                                 }
+                                //echo ''
                                 echo '<span class="card__attr mb-5">250 мл</span>';
                                 echo '<h3 class="card__title">' . esc_html($loop->post->post_title) . '</h3>';
                                 echo '</a>';
@@ -132,7 +135,8 @@ get_header();
                         <?php
                         $args = array(
                             'post_type' => 'product',
-                            'posts_per_page' => -1,
+                            'posts_per_page' => 20,
+                            'orderby' => 'rand',
                             'product_cat' => 'favorite', // Замените 'news' на слаг вашей категории
                         );
 
@@ -148,6 +152,8 @@ get_header();
                                 echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
                                 if (has_post_thumbnail($loop->post->ID)) {
                                     echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
+                                } else {
+                                    echo '<img src="' . get_template_directory_uri() . '/src/img/woocommerce-placeholder-300x300.png" alt="">';
                                 }
                                 echo '<span class="card__attr mb-5">250 мл</span>';
                                 echo '<h3 class="card__title">' . esc_html($loop->post->post_title) . '</h3>';

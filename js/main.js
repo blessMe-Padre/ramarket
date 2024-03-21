@@ -10,6 +10,7 @@ import { initTab } from "./module/tab.js";
 import { initDistance } from "./module/distance.js";
 import { init404 } from "./module/404.js";
 import { initLk } from "./module/lk.js";
+import { initCheckBox } from "./module/checkbox.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log('подключен скрипт main.js');
@@ -27,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initDistance();
     init404();
     initLk();
+    initCheckBox();
     // DOMContentLoaded
 
 });

@@ -1724,7 +1724,8 @@ button.swiper-pagination-bullet {
 
 .side-menu li ul {
     max-height: 0;
-    opacity: 0;
+    /* opacity: 0; */
+    /* visibility: hidden; */
     overflow: hidden;
     will-change: max-height;
     transition: all 0.3s ease;
@@ -1736,7 +1737,7 @@ button.swiper-pagination-bullet {
 }
 
 .side-menu li ul.is-active {
-    opacity: 1;
+    opacity: 1 !important;
     visibility: visible;
     height: 100%;
 }
@@ -1792,46 +1793,46 @@ button.swiper-pagination-bullet {
 
 /* input checkbox */
 
-.wpfCheckbox {
+.filter-main .wpfMainWrapper .wpfCheckbox {
     position: relative;
 }
 
-.wpfCheckbox::before {
+.filter-main .wpfMainWrapper .wpfCheckbox::before {
     content: '';
     position: absolute;
-    top: 10px;
+    top: -1px;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #E6E6E6;
+    background-color: var(--green);
     border-radius: 10px;
     cursor: pointer;
-    width: 41px !important;
-    height: 14px;
+    width: 44px !important;
+    height: 24px;
 }
 
-.wpfCheckbox label {
+.filter-main .wpfMainWrapper .wpfCheckbox label {
     position: relative;
     width: 22px;
     height: 22px;
     background-color: #f2f2f2;
     border-radius: 50%;
-    left: 0;
-    top: 5px;
+    left: 3px;
+    top: 2px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     z-index: 2;
 }
 
-.wpfCheckbox input:checked+.wpfCheckbox label {
+.filter-main .wpfMainWrapper .wpfCheckbox input:checked+.wpfCheckbox label {
     transform: translateX(19px);
 }
 
-.wpfFilterWrapper .wpfCheckbox input[type="checkbox"]:checked+label {
+.filter-main .wpfMainWrapper .wpfFilterWrapper .wpfCheckbox input[type="checkbox"]:checked+label {
     transform: translateX(19px);
-    background-color: #FAA6AE;
+    /* background-color: var(--red); */
 }
 
-.wpfFilterVerScroll {
+.filter-main .wpfMainWrapper .wpfFilterVerScroll {
     display: flex !important;
     align-items: center !important;
     gap: 30px !important;
@@ -1839,16 +1840,30 @@ button.swiper-pagination-bullet {
     padding-bottom: 8px !important;
 }
 
-.wpfLiLabel {
+.filter-main .wpfMainWrapper .wpfLiLabel {
     display: flex !important;
     gap: 20px !important;
     align-items: center !important;
 }
 
-.wpfMainWrapper {
+.filter-main .wpfMainWrapper .wpfMainWrapper {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.filter-main .wpfMainWrapper .wpfFilterWrapper .wpfCheckbox input[type="checkbox"]+label::before {
+    content: none !important;
+}
+
+.filter-main .wpfMainWrapper .wpfDisplay .wpfValue {
+    margin-left: 10px !important;
+}
+
+.filter-second .wpfMainWrapper .wpfFilterWrapper .wpfCheckbox input[type="checkbox"]:checked+label::before {
+    background-color: var(--green) !important;
+    background-image: url('./src/img/chekbox.png') !important;
+    background-repeat: no-repeat !important;
 }
 
 .popup {
@@ -4270,4 +4285,18 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
 
 .products.columns-3 .wvs-archive-variations-wrapper.wvs-pro-loaded {
     display: none;
+}
+
+.woocommerce-LoopProduct-link.woocommerce-loop-product__link {}
+
+.woocommerce-LoopProduct-link.woocommerce-loop-product__link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 250px;
+}
+
+.woocommerce-product-gallery__wrapper img {
+    max-height: 60vh;
+    object-fit: cover;
 }

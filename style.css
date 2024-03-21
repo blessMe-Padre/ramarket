@@ -4083,6 +4083,24 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
 
 .quantity {
     margin-bottom: 10px !important;
+    padding: 5px 10px !important;
+    background-color: #ffffff !important;
+    border-radius: 25px !important;
+}
+
+.plus.button.wp-element-button,
+.minus.button.wp-element-button {
+    border-radius: 100% !important;
+}
+
+.variations {
+    position: relative;
+}
+
+.reset_variations {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
 }
 
 .single_add_to_cart_button.button {
@@ -4117,6 +4135,31 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     margin-bottom: 15px;
 }
 
+@media (max-width: 1350px) {
+    .summary.entry-summary {
+        width: 100% !important;
+    }
+
+    .woocommerce-variation-add-to-cart {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .summary.entry-summary {
+        grid-column: 1/-1;
+    }
+}
+
+@media (max-width: 767px) {
+    .single-product__description {
+        grid-column: 1/1;
+        grid-row: 2/3;
+    }
+}
+
+
 .woocommerce-product-gallery.woocommerce-product-gallery--with-images.woocommerce-product-gallery--columns-4.images {
     width: 100%;
 }
@@ -4130,6 +4173,26 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
 .woocommerce div.product div.images img {
     width: fit-content !important;
     max-width: none !important;
+}
+
+@media (max-width: 767px) {
+    .woocommerce div.product div.images img {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .entry-summary-wrapper {
+        padding: 10px;
+    }
+
+    .summary.entry-summary .price {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .woocommerce div.product form.cart {
+        margin-bottom: 0;
+    }
 }
 
 /*  Личный кабинет -> Профиль*/
@@ -4204,4 +4267,8 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     right: 21px;
     mask-image: url(/wp-content/themes/ramarket/src/img/close.svg);
     background-color: #d74242;
+}
+
+.products.columns-3 .wvs-archive-variations-wrapper.wvs-pro-loaded {
+    display: none;
 }

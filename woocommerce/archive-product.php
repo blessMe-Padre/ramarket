@@ -36,9 +36,9 @@ do_action('woocommerce_before_main_content');
 
 <header class="woocommerce-products-header">
 	<?php if (apply_filters('woocommerce_show_page_title', true)): ?>
-																				<h1 class="catalog-title">
-																					<?php woocommerce_page_title(); ?>
-																				</h1>
+			<h1 class="catalog-title">
+				<?php woocommerce_page_title(); ?>
+			</h1>
 	<?php endif; ?>
 
 	<?php
@@ -65,105 +65,105 @@ if (woocommerce_product_loop()) {
 	 */
 
 	?>
-								<div class="3333333333333333">
-								<?php
-								do_action('woocommerce_before_shop_loop');
-								?>
-								<div class="filter-main">
-								<?php echo do_shortcode('[wpf-filters id=1]'); ?>
-								</div>
-								<div class="filter-second">
-								<?php echo do_shortcode('[wpf-filters id=2]'); ?>
-								</div>
+			<div class="3333333333333333">
+			<?php
+			do_action('woocommerce_before_shop_loop');
+			?>
 
-	
-								</div>
-								<?php
-								?>
-								<div class="catalog py-10 relative">
-								<div class="left">
+			<div class="filters-row">
+				<?php echo do_shortcode('[wpf-filters id=5]') ?>
+			</div>
 
-								<button class="filter-button">
-									<span>Фильтр</span>
-								</button>
-								<ul class="side-menu">
-									<li>
-										<a class="" href="#">Категории</a>
-										<?php wp_nav_menu([
-											'theme_location' => 'category',
-											'container' => '',
-											'menu_class' => '',
-											'menu_id' => ''
-										]);
-										?>
-									</li>
-									<li>
-										<a class="" href="#">Фильтр</a>
-										<ul>
-											<li><div class="filter-second">
-												<?php echo do_shortcode('[wpf-filters id=3]'); ?>
-												</div></li>
-												wwwwwww
-										</ul>
-									</li>
-									<li>
-										<a class="" href="#">Страна</a>
-										<ul>
-											<li><div class="filter-second">
-												<?php echo do_shortcode('[wpf-filters id=4]'); ?>
-												</div></li>
-										</ul>
-									</li>
-									<li>
-										<a class="" href="#">тесту</a>
-										<ul>
-											<li>23123123</li>
-											<li>23123123</li>
-											<li>23123123</li>
-											<li>0000000
-											<ul>
-												<li>Молоко и сливки</li>
-												<li>Сыры</li>
-												<li>Масло</li>
-												<li>Творог и сметана</li>
-												<li>Кисломолочные</li>
-												<li>Йогурты и сырки</li>
-											</ul>
-											</li>
-											<li>23123123</li>
-											<li>23123123</li>
-											<li>23123123</li>
-										</ul>
-									</li>
+			</div>
+			<?php
+			?>
+			<div class="catalog py-10 relative">
+			<div class="left">
 
-								</ul>
-								</div>
+			<button class="filter-button">
+				<span>Фильтр</span>
+			</button>
+			<ul class="side-menu">
+				<li>
+					<a class="" href="#">Категории</a>
+					<?php wp_nav_menu([
+						'theme_location' => 'category',
+						'container' => '',
+						'menu_class' => '',
+						'menu_id' => ''
+					]);
+					?>
+				</li>
+				<li>
+					<a class="" href="#">Производитель</a>
+					<ul>
+						<li><div class="filter-second">
+							<?php echo do_shortcode('[wpf-filters id=3]'); ?>
+							</div></li>
+		
+					</ul>
+				</li>
+				<li>
+					<a class="" href="#">Страна</a>
+					<ul>
+						<li><div class="filter-second">
+							<?php echo do_shortcode('[wpf-filters id=4]'); ?>
+							</div></li>
+					</ul>
+				</li>
+				<li>
+					<a class="" href="#">тесту</a>
+					<ul>
+						<li>23123123</li>
+						<li>23123123</li>
+						<li>23123123</li>
+						<li>0000000
+						<ul>
+							<li>Молоко и сливки</li>
+							<li>Сыры</li>
+							<li>Масло</li>
+							<li>Творог и сметана</li>
+							<li>Кисломолочные</li>
+							<li>Йогурты и сырки</li>
+						</ul>
+						</li>
+						<li>23123123</li>
+						<li>23123123</li>
+						<li>23123123</li>
+					</ul>
+				</li>
 
-								<div class="right">
-								<?php
-								woocommerce_product_loop_start();
+			</ul>
+			</div>
 
-								if (wc_get_loop_prop('total')) {
-									while (have_posts()) {
-										the_post();
+			<div class="right">
+				<div class="filter-main">
+					<?php echo do_shortcode('[wpf-filters id=1]'); ?>
+				</div>
+			<?php
+			woocommerce_product_loop_start();
 
-										/**
-										 * Hook: woocommerce_shop_loop.
-										 */
-										do_action('woocommerce_shop_loop');
+			if (wc_get_loop_prop('total')) {
+				while (have_posts()) {
+					the_post();
 
-										wc_get_template_part('content', 'product');
-									}
-								}
+					/**
+					 * Hook: woocommerce_shop_loop.
+					 */
+					do_action('woocommerce_shop_loop');
 
-								woocommerce_product_loop_end();
+					wc_get_template_part('content', 'product');
+				}
+			}
 
-								/**
-								 * Hook: woocommerce_after_shop_loop.
-								 *
-								 * @hooked woocommerce_pagination - 10
-								 */
-								do_action('woocommerce_after_shop_loop');
+			woocommerce_product_loop_end();
+
+			/**
+			 * Hook: woocommerce_after_shop_loop.
+			 *
+			 * @hooked woocommerce_pagination - 10
+			 */
+			do_action('woocommerce_after_shop_loop');
 } else {
 	/**
 	 * Hook: woocommerce_no_products_found.

@@ -1,6 +1,6 @@
 export const initCheckBox = () => {
     // Сначала получаем все чекбоксы внутри элементов с классом 'wpfLiLabel'
-    const checkboxes = document.querySelectorAll('.tag-wrapper .wpfLiLabel .wpfCheckbox input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('.filters-row .wpfLiLabel .wpfCheckbox input[type="checkbox"]');
 
     // Функция для обновления класса 'is-active'
     function updateActiveClass() {

@@ -1838,6 +1838,7 @@ button.swiper-pagination-bullet {
     gap: 30px !important;
     padding-top: 8px !important;
     padding-bottom: 8px !important;
+    justify-content: flex-end !important;
 }
 
 .filter-main .wpfMainWrapper .wpfLiLabel {
@@ -1864,6 +1865,27 @@ button.swiper-pagination-bullet {
     background-color: var(--green) !important;
     background-image: url('./src/img/chekbox.png') !important;
     background-repeat: no-repeat !important;
+}
+
+.filters-row .wpfFilterVerScroll {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.filters-row .wpfLiLabel {
+    border: 1px solid #abb2be;
+    border-radius: 30px;
+    padding: 10px 25px 10px 25px;
+}
+
+.filters-row .wpfLiLabel.is-active {
+    box-shadow: 6px 6px 0px 0px #6EC2A7;
+}
+
+.filters-row .wpfFilterWrapper .wpfCheckbox label {
+    display: none !important;
 }
 
 .popup {
@@ -4102,6 +4124,14 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     border-radius: 25px !important;
 }
 
+@media (max-width: 768px) {
+    .quantity {
+        padding: 0 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 .plus.button.wp-element-button,
 .minus.button.wp-element-button {
     border-radius: 100% !important;
@@ -4125,6 +4155,14 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     padding: 10px 15px 10px 15px !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: center !important;
+}
+
+.woocommerce #content div.product div.summary,
+.woocommerce div.product div.summary,
+.woocommerce-page #content div.product div.summary,
+.woocommerce-page div.product div.summary {
+    width: 54%;
 }
 
 .entry-summary-wrapper {
@@ -4143,6 +4181,11 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     align-items: center;
     gap: 10px;
 }
+
+.button-single-wrapper button {
+    width: 100%;
+}
+
 
 .summary.entry-summary .price {
     margin-top: 10px;
@@ -4301,55 +4344,46 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     object-fit: cover;
 }
 
-.star_symbol
-{
-    background-image    : url(/wp-content/themes/ramarket/src/img/about__shop/star.png);
-    background-position : center;
-    background-repeat   : no-repeat;
-    background-size     : contain;
-    width               : 21px;
-    height              : 21px;
+.star_symbol {
+    background-image: url(/wp-content/themes/ramarket/src/img/about__shop/star.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 21px;
+    height: 21px;
 }
 
-.rounded-lg
-{
+.rounded-lg {
     height: 80px;
 }
 
-.reviews__list li
-{
+.reviews__list li {
     display: flex;
     flex-direction: column;
     padding: 30px 30px 30px;
 }
 
-.reviews__list .text
-{
+.reviews__list .text {
     flex: 1;
 }
 
-.avatar
-{
+.avatar {
     width: 60px;
     height: 60px;
     line-height: 60px;
     text-align: center;
 }
 
-@media (max-width: 768px)
-{
-    .rounded-lg
-    {
+@media (max-width: 768px) {
+    .rounded-lg {
         height: 50px;
     }
 
-    .reviews__list li
-    {
+    .reviews__list li {
         padding: 25px 25px 25px;
     }
 
-    .avatar
-    {
+    .avatar {
         width: 45px;
         height: 45px;
         line-height: 45px;
@@ -4357,168 +4391,149 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
 }
 
 /* PopUp для отзывов */
-.popup h2
-{
-    font-size       : 30px;
-    font-weight     : 450;
-    padding-bottom  : 30px;
+.popup h2 {
+    font-size: 30px;
+    font-weight: 450;
+    padding-bottom: 30px;
 }
 
-.popup .form-field + .form-field
-{
-    margin-top  : 30px;
+.popup .form-field+.form-field {
+    margin-top: 30px;
 }
 
-.popup .field-rating
-{
-    display : flex;
+.popup .field-rating {
+    display: flex;
 }
 
-.popup .field-rating .strong-rating
-{
-    display : flex;
-    gap     : 20px;
+.popup .field-rating .strong-rating {
+    display: flex;
+    gap: 20px;
 }
 
-.popup .form-field > label
-{
-    font-weight     : 400;
-    font-size       : 16px;
-    color           : #adb3c2;
-    display         : block;
-    margin-bottom   : 10px;
+.popup .form-field>label {
+    font-weight: 400;
+    font-size: 16px;
+    color: #adb3c2;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.popup .field-rating > label
-{
-    font-weight : 500;
-    font-size   : 18px;
-    flex        : 1;
-    color       : #292e35;
-    margin      : 0px !important;
+.popup .field-rating>label {
+    font-weight: 500;
+    font-size: 18px;
+    flex: 1;
+    color: #292e35;
+    margin: 0px !important;
 }
 
 .popup .form-field input[type="text"],
-.popup label.file__button
-{
-    display             : block;
-    width               : 100%;
-    border-radius       : 100px;
-    padding             : 7.5px 24px 7.5px;
-    background-color    : #f5f6f8;
-    font-size           : 20px;
+.popup label.file__button {
+    display: block;
+    width: 100%;
+    border-radius: 100px;
+    padding: 7.5px 24px 7.5px;
+    background-color: #f5f6f8;
+    font-size: 20px;
 }
 
-.popup .form-field textarea
-{
-    display             : block;
-    width               : 100%;
-    border-radius       : 20px;
-    padding             : 7.5px 24px 7.5px;
-    background-color    : #f5f6f8;
-    font-size           : 20px;
-    min-height          : 150px;
+.popup .form-field textarea {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    padding: 7.5px 24px 7.5px;
+    background-color: #f5f6f8;
+    font-size: 20px;
+    min-height: 150px;
 }
 
-.popup label.file__button
-{
-    height              : 45px;
-    font-size           : 20px;
-    color               : #292e35;
-    background-image    : url(/wp-content/themes/ramarket/src/img/clip.svg);
-    background-repeat   : no-repeat;
-    background-position : calc(100% - 20px) center;
+.popup label.file__button {
+    height: 45px;
+    font-size: 20px;
+    color: #292e35;
+    background-image: url(/wp-content/themes/ramarket/src/img/clip.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 50px;
 }
 
-.popup .popup__content
-{
-    width   : 600px;
-    padding : 40px 60px 50px;
+.popup .popup__content {
+    width: 600px;
+    padding: 40px 60px 50px;
 }
 
-.popup input[type="submit"]
-{
-    font-size           : 16px;
-    line-height         : 25px;
-    font-weight         : 450;
-    color               : #ffffff;
-    background-color    : #1a9640;
-    cursor              : pointer;
-    padding             : 10px 30px 10px;
-    width               : 100%;
-    border-radius       : 100px;
+.popup input[type="submit"] {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 450;
+    color: #ffffff;
+    background-color: #1a9640;
+    cursor: pointer;
+    padding: 10px 30px 10px;
+    width: 100%;
+    border-radius: 100px;
 }
 
-.popup .wpmtst-submit label
-{
+.popup .wpmtst-submit label {
     margin: 0px;
 }
 
-@media (max-width: 768px)
-{
-    .popup h2
-    {
+@media (max-width: 768px) {
+    .popup h2 {
         font-size: 24px;
         padding-bottom: 15px;
     }
 
-    .popup .form-field + .form-field
-    {
+    .popup .form-field+.form-field {
         margin-top: 15px;
     }
 
-    .popup .field-rating .strong-rating
-    {
+    .popup .field-rating .strong-rating {
         gap: 10px;
     }
 
-    .popup .form-field > label
-    {
+    .popup .form-field>label {
         font-size: 14px;
     }
 
-    .popup .field-rating > label
-    {
+    .popup .field-rating>label {
         font-size: 14px;
     }
 
     .popup .form-field input[type="text"],
-    .popup label.file__button
-    {
+    .popup label.file__button {
         font-size: 16px;
         padding: 8px 24px 8px;
     }
 
-    .popup .form-field textarea
-    {
+    .popup .form-field textarea {
         font-size: 16px;
         border-radius: 14px;
         padding: 8px 24px 8px;
         min-height: 100px;
     }
 
-    .popup label.file__button
-    {
+    .popup label.file__button {
         height: 40px;
     }
 
-    .popup .popup__content
-    {
-        width   : 400px;
-        padding : 30px 30px 40px;
+    .popup .popup__content {
+        width: 400px;
+        padding: 30px 30px 40px;
     }
 
-    .popup input[type="submit"]
-    {
+    .popup input[type="submit"] {
         padding: 7.5px 22.5px 7.5px;
     }
 }
 
-@media (max-width: 375px)
-{
-    .popup .popup__content
-    {
+@media (max-width: 375px) {
+    .popup .popup__content {
         width: 335px;
         padding: 30px 30px 30px;
     }
 }
+
+.stock.in-stock {}

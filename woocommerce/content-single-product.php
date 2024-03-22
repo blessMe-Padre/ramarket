@@ -20,6 +20,23 @@ defined('ABSPATH') || exit;
 global $product;
 $product_title = $product->get_title();
 
+$short_description = $product->get_short_description();// получает короткое описание товара
+$attr = $product->get_attributes(); // Получаем весь массив с атрибутами товаров
+
+$array = array(); // Создаем пустой массив
+foreach ($attr as $key => $value) {
+	$array[$key] = (($value->get_terms())[0]);
+}
+
+// обращаемся по ключу к каждому атрибуту
+$country = $array['pa_strana']->name;
+$proizvoditel = $array['pa_proizvoditel-1']->name;
+$kkal = $array['pa_kalorijnost-kkal']->name;
+$zhiry = $array['pa_zhiry-g']->name;
+$upakovka = $array['pa_vid-upakovki']->name;
+$obem = $array['pa_obem-1']->name;
+$sostav = $array['pa_sostav']->name;
+$primechanie = $array['pa_primechanie-1']->name;
 
 /**
  * Hook: woocommerce_before_single_product.
@@ -34,81 +51,96 @@ if (post_password_required()) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
-
-	 <h1 class="title"><?php echo $product_title ?></h1>
-	 
-
+	<h1 class="title">
+		<?php echo $product_title ?>
+	</h1>
 	<div class="single-product__wrapper">
-	<?php
-	/**
-	 * Hook: woocommerce_before_single_product_summary.
-	 *
-	 * @hooked woocommerce_show_product_sale_flash - 10
-	 * @hooked woocommerce_show_product_images - 20
-	 */
-	do_action('woocommerce_before_single_product_summary');
-	?>
+		<?php
+		/**
+		 * Hook: woocommerce_before_single_product_summary.
+		 *
+		 * @hooked woocommerce_show_product_sale_flash - 10
+		 * @hooked woocommerce_show_product_images - 20
+		 */
+		do_action('woocommerce_before_single_product_summary');
+		?>
 
-	<div class="summary entry-summary">
-		<div class="entry-summary-wrapper">
+		<div class="summary entry-summary">
+			<div class="entry-summary-wrapper">
+				<?php
+				/**
+				 * Hook: woocommerce_single_product_summary.
+				 *
+				 * @hooked woocommerce_template_single_title - 5
+				 * @hooked woocommerce_template_single_rating - 10
+				 * @hooked woocommerce_template_single_price - 10
+				 * @hooked woocommerce_template_single_excerpt - 20
+				 * @hooked woocommerce_template_single_add_to_cart - 30
+				 * @hooked woocommerce_template_single_meta - 40
+				 * @hooked woocommerce_template_single_sharing - 50
+				 * @hooked WC_Structured_Data::generate_product_data() - 60
+				 */
+				do_action('woocommerce_single_product_summary');
+				?>
+			</div>
+		</div>
+
+		<div class="single-product__description">
+			<!-- <div class="mb-7">
+				<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-yellow">Новинки</span>
+				<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-light-green">Эко</span>
+			</div> -->
+
+			<p class="text-xl font-bold mb-5">Пищевая ценность:</p>
 			<?php
-			/**
-			 * Hook: woocommerce_single_product_summary.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 * @hooked WC_Structured_Data::generate_product_data() - 60
-			 */
-			do_action('woocommerce_single_product_summary');
+			echo "<p class='text-lg'>Жиры: {$zhiry}, Белки: 0 г,</p>";
 			?>
+			<p class="text-lg mb-5">Калорийность:
+				<?php echo $kkal; ?> ккал
+			</p>
+
+			<p class="text-xl font-bold mb-5">Характеристики:</p>
+
+			<ul class="single-product__list">
+				<li>
+					<p class="font-medium">Страна</p>
+					<p>
+						<?php echo $country; ?>
+					</p>
+				</li>
+				<li>
+					<p class="font-medium">Производитель</p>
+					<p>
+						<?php echo $proizvoditel; ?>
+					</p>
+				</li>
+				<li>
+					<p class="font-medium">Объем</p>
+					<p>
+						<?php echo $obem; ?>
+					</p>
+				</li>
+				<li>
+					<p class="font-medium">Вид упаковки</p>
+					<p>
+						<?php echo $upakovka; ?>
+					</p>
+				</li>
+				<li>
+					<p class="font-medium">Примечание</p>
+					<p>
+						<?php echo $primechanie; ?>
+					</p>
+				</li>
+
+				<li>
+					<p class="font-medium">Состав</p>
+					<p>
+						<?php echo $sostav; ?>
+					</p>
+				</li>
+			</ul>
 		</div>
-	</div>
-
-	<div class="single-product__description">
-		<div class="mb-7">
-			<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-yellow">Новинки</span>
-			<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-light-green">Эко</span>
-		</div>
-
-		<p class="text-xl font-bold mb-5">Пищевая ценность:</p>
-		<p class="text-lg">Жиры: 24,8 г, Белки: 23 г,</p>
-		<p class="text-lg mb-5">Калорийность: 291 ккал</p>
-
-		<p class="text-xl font-bold mb-5">Характеристики:</p>
-
-		<ul class="single-product__list">
-			<li>
-				<p class="font-medium">Страна</p>
-				<p>Нидерланды, Королевство</p>
-			</li>
-			<li>
-				<p class="font-medium">Производитель</p>
-				<p>MAYONEUR</p>
-			</li>
-			<li>
-				<p class="font-medium">Объем</p>
-				<p>250 мл</p>
-			</li>
-			<li>
-				<p class="font-medium">Вид упаковки</p>
-				<p>пластик</p>
-			</li>
-			<li>
-				<p class="font-medium">Примечание</p>
-				<p>веган, без глютена, халяль</p>
-			</li>
-
-			<li>
-				<p class="font-medium">Состав</p>
-				<p>вода, рапсовое масло, 20% манго.</p>
-			</li>
-		</ul>
-	</div>
 
 	</div>
 

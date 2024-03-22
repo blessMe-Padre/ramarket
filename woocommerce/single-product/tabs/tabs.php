@@ -29,53 +29,68 @@ if (!defined('ABSPATH')) {
 $product_tabs = apply_filters('woocommerce_product_tabs', array());
 
 global $product;
-// получает короткое описание товара
-$short_description = $product->get_short_description();
+$short_description = $product->get_short_description();// получает короткое описание товара
+$attr = $product->get_attributes(); // Получаем весь массив с атрибутами товаров
+
+$array = array(); // Создаем пустой массив
+foreach ($attr as $key => $value) {
+	$array[$key] = (($value->get_terms())[0]);
+}
+
+// обращаемся по ключу к каждому атрибуту
+$sostav = $array['pa_sostav']->name;
+$uslovia = $array['pa_usloviya-i-srok-hraneniya']->name;
+
 
 if (!empty ($product_tabs)): ?>
 
-	<div class="woocommerce-tabs wc-tabs-wrapper">
-	<ul class="tabs wc-tabs" role="tablist">
-		<?php foreach ($product_tabs as $key => $product_tab): ?>
-										<li class="<?php echo esc_attr($key); ?>_tab" id="tab-title-<?php echo esc_attr($key); ?>" role="tab" aria-controls="tab-<?php echo esc_attr($key); ?>">
-											<a href="#tab-<?php echo esc_attr($key); ?>">
-												<?php echo wp_kses_post(apply_filters('woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key)); ?>
-											</a>
-										</li>
-		<?php endforeach; ?>
-		</ul>
-		<?php foreach ($product_tabs as $key => $product_tab): ?>
-										<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--<?php echo esc_attr($key); ?> panel entry-content wc-tab" id="tab-<?php echo esc_attr($key); ?>" role="tabpanel" aria-labelledby="tab-title-<?php echo esc_attr($key); ?>">
-											<?php
-											if (isset ($product_tab['callback'])) {
-												call_user_func($product_tab['callback'], $key, $product_tab);
-											}
-											?>
-										</div>
-		<?php endforeach; ?>
+		<div class="woocommerce-tabs wc-tabs-wrapper">
+			<ul class="tabs wc-tabs" role="tablist">
+				<?php foreach ($product_tabs as $key => $product_tab): ?>
+						<li class="<?php echo esc_attr($key); ?>_tab" id="tab-title-<?php echo esc_attr($key); ?>" role="tab"
+							aria-controls="tab-<?php echo esc_attr($key); ?>">
+							<a href="#tab-<?php echo esc_attr($key); ?>">
+								<?php echo wp_kses_post(apply_filters('woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key)); ?>
+							</a>
+						</li>
+				<?php endforeach; ?>
+			</ul>
+			<?php foreach ($product_tabs as $key => $product_tab): ?>
+					<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--<?php echo esc_attr($key); ?> panel entry-content wc-tab"
+						id="tab-<?php echo esc_attr($key); ?>" role="tabpanel"
+						aria-labelledby="tab-title-<?php echo esc_attr($key); ?>">
+						<?php
+						if (isset ($product_tab['callback'])) {
+							call_user_func($product_tab['callback'], $key, $product_tab);
+						}
+						?>
+					</div>
+			<?php endforeach; ?>
 
-		<?php do_action('woocommerce_product_after_tabs'); ?>
-	</div>
-	<div class="_tabs">
-		<nav class="single-product__nav">
-			<button class="_tabs-item _active" data-tab="#tab1">О товаре</button> |
-			<button class="_tabs-item" data-tab="#tab2">Состав</button> |
-			<button class="_tabs-item" data-tab="#tab3">Условия хранения</button>
-		</nav>
+			<?php do_action('woocommerce_product_after_tabs'); ?>
+		</div>
+		<div class="_tabs">
+			<nav class="single-product__nav">
+				<button class="_tabs-item _active" data-tab="#tab1">О товаре</button> |
+				<button class="_tabs-item" data-tab="#tab2">Состав</button> |
+				<button class="_tabs-item" data-tab="#tab3">Условия хранения</button>
+			</nav>
 
-		<div class="_tabs-block _active" id="tab1">
-			<p>
-				<?php echo $short_description; ?>
-			</p>
+			<div class="_tabs-block _active" id="tab1">
+				<p>
+					<?php echo $short_description; ?>
+				</p>
+			</div>
+			<div class="_tabs-block" id="tab2">
+				<p>
+					<?php echo $sostav; ?>
+				</p>
+			</div>
+			<div class="_tabs-block" id="tab3">
+				<p>
+					<?php echo $uslovia; ?>
+				</p>
+				</p>
+			</div>
 		</div>
-		<div class="_tabs-block" id="tab2">
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatum dignissimos
-				placeat eaque illo est.</p>
-		</div>
-		<div class="_tabs-block" id="tab3">
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni non voluptas fuga veritatis
-				accusamus, deserunt iusto illum enim, velit fugit, quaerat numquam inventore. Dolor hic
-				consequatur magni optio aut.</p>
-		</div>
-	</div>
 <?php endif; ?>

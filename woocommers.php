@@ -70,6 +70,9 @@ if (class_exists('WooCommerce')) {
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 // add_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 15 );
 
+// отключает вывод короткого описания товара
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+
 // add_action('woocommerce_single_product_summary', 'add_some_text', 5);
 // function add_some_text()
 // {

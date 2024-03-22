@@ -239,6 +239,7 @@ get_header();
                             height="20" alt="pin">
                     </div>
                     <a class="font-medium text-sm" href="tel:+79084405742">+ 7 (908) 440-57-42</a>
+                    
                 </div>
 
                 <a href="#popup" class="ra-button popup-link">Заказать звонок</a>

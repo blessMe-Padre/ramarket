@@ -20,6 +20,7 @@ defined('ABSPATH') || exit;
 global $product;
 $product_title = $product->get_title();
 
+
 /**
  * Hook: woocommerce_before_single_product.
  *

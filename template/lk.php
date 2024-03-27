@@ -52,11 +52,11 @@ get_header();
                                     <?php echo add_custom_field('user_birth'); ?>
                                 </div>
 
-                                <!--<div class="form-lk__item">
+                                <div class="form-lk__item">
                                     <div class="form-lk__title">Пароль</div>
 
-                                    <?php //echo add_custom_field('user_pass');   ?>
-                                </div>-->
+                                    <?php echo add_custom_field('user_pass'); ?>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -83,7 +83,7 @@ get_header();
             </div>
             <div class="_tabs-block" id="tab3">
                 <ul class="catalog__list">
-                <?php echo show_favorite_product($user_id); ?>
+                    <?php echo show_favorite_product($user_id); ?>
                 </ul>
             </div>
         </div>

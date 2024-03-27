@@ -38,6 +38,7 @@ function add_menu()
     register_nav_menu('top', 'главное меню сайта');
     register_nav_menu('lk', 'меню личный кабинет');
     register_nav_menu('category', 'Категории каталога');
+    register_nav_menu('footer', 'Категории в футере');
 }
 
 

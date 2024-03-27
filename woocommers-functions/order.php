@@ -55,7 +55,7 @@ function show_user_order($user_id)
         $customer_orders = wc_get_orders(
             array(
                 'customer' => $user_id,
-                'status' => array('wc-pending', 'wc-processing', 'wc-on-hold', 'wc-completed'), // Укажите нужные статусы заказов
+                'status' => array('wc-pending', 'wc-processing', 'wc-on-hold', 'wc-completed'),
             )
         );
 
@@ -109,23 +109,18 @@ function show_user_order($user_id)
 
                 foreach ($order->get_items() as $item_id => $item) {
                     $product_item = $item->get_product();
-                    $weight = $product_item->get_weight();
+                    $weight = (int) $product_item->get_weight();
                     $total_weight += $weight;
                 }
-                
-                if(($items_count%100 < 10 || $items_count%100 > 20) && in_array($items_count%10, array(1)))
-                {
+
+                if (($items_count % 100 < 10 || $items_count % 100 > 20) && in_array($items_count % 10, array(1))) {
                     $suffix = 'товар';
-                }
-                else if(($items_count%100 < 10 || $items_count%100 > 20) && in_array($items_count%10, array(2, 3, 4)))
-                {
+                } else if (($items_count % 100 < 10 || $items_count % 100 > 20) && in_array($items_count % 10, array(2, 3, 4))) {
                     $suffix = 'товара';
-                }
-                else
-                {
+                } else {
                     $suffix = 'товаров';
                 }
-                
+
                 echo "<p class='text-dark-gray mb-5'> {$items_count} {$suffix} ({$total_weight} кг)</p>";
                 echo '    <div class="flex flex-wrap gap-5 items-center justify-between">';
                 echo '       <ul class="flex gap-3">';
@@ -144,13 +139,13 @@ function show_user_order($user_id)
                 echo "       <a href='{$order_link}' class='lk-order-item-button'>";
                 echo '       <span>Повторить</span>';
                 echo '         <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M8.60654 2.22266C11.2793 2.91714 13.249 5.3026 13.249 8.13859C13.249 11.5187 10.451 14.2588 6.99952 14.2588C3.54801 14.2588 0.75 11.5187 0.75 8.13859C0.75 5.3026 2.71972 2.91714 5.3925 2.22266"
-                                        stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M4.43945 1.44922L5.86995 2.21005L5.10912 3.64055" stroke="white"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>';
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8.60654 2.22266C11.2793 2.91714 13.249 5.3026 13.249 8.13859C13.249 11.5187 10.451 14.2588 6.99952 14.2588C3.54801 14.2588 0.75 11.5187 0.75 8.13859C0.75 5.3026 2.71972 2.91714 5.3925 2.22266"
+                                                stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                                            <path d="M4.43945 1.44922L5.86995 2.21005L5.10912 3.64055" stroke="white"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>';
                 echo ' </a>';
 
                 echo ' </div>';
@@ -201,7 +196,7 @@ function add_custom_field($type)
     $field .= '<input id="' . $type . '" class="input_field" type="' . (isset ($input_type) ? $input_type : 'text') . '" name="' . $type . '" value="' . (isset ($input_value) ? $input_value : '') . '" disabled' . (isset ($styles) ? ' style="' . $styles . '"' : '') . ' />';
     $field .= wp_nonce_field('save_account_details_access');
     $field .= '<div class="edit"></div>';
-    //$field  .=          '<div class="submit hidden"></div>';
+
     $field .= '<button type="submit" name="save_account_details" class="submit hidden"></button>';
     $field .= '<div class="cancel hidden"></div>';
     $field .= '</div>';

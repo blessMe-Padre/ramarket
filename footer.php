@@ -6,37 +6,24 @@
 
             <div class="flex flex-col">
                 <h3>Клиентам</h3>
-                <ul class="footer__list">
                     <?php wp_nav_menu([
                         'theme_location' => 'top',
                         'container' => '',
-                        'menu_class' => '',
+                        'menu_class' => 'footer__list',
                         'menu_id' => ''
                     ]);
                     ?>
-                </ul>
             </div>
 
             <div>
                 <h3>Каталог</h3>
-                <ul class="footer__list-columns">
-                    <li><a href="#">Овощи</a></li>
-                    <li><a href="#">Тайские фрукты</a></li>
-                    <li><a href="#">️Ягода</a></li>
-                    <li><a href="#">Зелень</a></li>
-                    <li><a href="#">Домашняя консервация</a></li>
-                    <li><a href="#">БАДы</a></li>
-                    <li><a href="#">Варенье</a></li>
-                    <li><a href="#">Сок собственного производства</a></li>
-                    <li><a href="#">Вода и напитки</a></li>
-                    <li><a href="#">Хлебная продукция</a></li>
-                    <li><a href="#">Молочная продукция</a></li>
-                    <li><a href="#">Сыры</a></li>
-                    <li><a href="#">Яйцо</a></li>
-                    <li><a href="#">Дикоросы</a></li>
-                    <li><a href="#">Непродовольственные товары</a></li>
-                    <li><a href="#">Бакалейная группа</a></li>
-                </ul>
+                    <?php wp_nav_menu([
+                        'theme_location' => 'footer',
+                        'container' => '',
+                        'menu_class' => 'footer__list-columns',
+                        'menu_id' => ''
+                    ]);
+                    ?>
             </div>
 
             <div>

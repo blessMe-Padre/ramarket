@@ -83,54 +83,41 @@
                 </button>
 
                 <ul class="catalog-menu">
-                    <li class="relative">
-                        <p>Овощи</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-1.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>Тайские фрукты</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-2.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>️Ягода</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-3.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>Овощи</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-1.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>Тайские фрукты</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-2.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>️Ягода</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-3.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>Овощи</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-1.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>Тайские фрукты</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-2.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>️Ягода</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-3.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>Овощи</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-1.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>Тайские фрукты</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-2.png" alt="">
-                    </li>
-                    <li class="relative">
-                        <p>️Ягода</p>
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-3.png" alt="">
-                    </li>
+                    <?php
+                    //получить все категории woocommerce
+                    $categories = get_categories(
+                        array(
+                            'hide_empty' => 0,
+                            'orderby' => 'name',
+                            'order' => 'ASC',
+                            'parent' => 0,
+                            'taxonomy' => 'product_cat'
+                        )
+                    );
+
+                    foreach ($categories as $category) {
+                        $category_link = get_category_link($category->term_id); // Получаем ссылку на категорию
+                        $category_name = $category->name; // Получаем название категории
+                        $term_id = $category->term_id;
+                        // получить ссылку на картинку категории
+                        $category_image = wp_get_attachment_image_src(
+                            get_term_meta($term_id, 'thumbnail_id', true),
+                            'full'
+                        );
+                        $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
+                        $category_image = wp_get_attachment_image_src($thumbnail_id, 'full');
+                        $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
+
+                        ?>
+                            <li class="relative">
+                                <a href="<?php echo esc_url($category_link); ?>">
+                                <p><?php echo esc_html($category_name); ?></p>
+                                <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                </a>
+                            </li>
+                        <?php
+                    }
+                    ?>
                 </ul>
 
                 <div class="catalog-menu-mobile">
@@ -145,22 +132,30 @@
                     </div>
 
                     <ul class="catalog-menu-mobile-list">
-                        <li class="relative">
-                            <p>Овощи</p>
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-1.png" alt="">
-                        </li>
-                        <li class="relative">
-                            <p>Тайские фрукты</p>
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-2.png" alt="">
-                        </li>
-                        <li class="relative">
-                            <p>️Ягода</p>
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-3.png" alt="">
-                        </li>
-                        <li class="relative">
-                            <p>Овощи</p>
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/catalog/image-1.png" alt="">
-                        </li>
+                        <?php
+                        foreach ($categories as $category) {
+                            $category_link = get_category_link($category->term_id); // Получаем ссылку на категорию
+                            $category_name = $category->name; // Получаем название категории
+                            $term_id = $category->term_id;
+                            // получить ссылку на картинку категории
+                            $category_image = wp_get_attachment_image_src(
+                                get_term_meta($term_id, 'thumbnail_id', true),
+                                'full'
+                            );
+                            $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
+                            $category_image = wp_get_attachment_image_src($thumbnail_id, 'full');
+                            $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
+
+                            ?>
+                                    <li class="relative">
+                                        <a href="<?php echo esc_url($category_link); ?>">
+                                        <p><?php echo esc_html($category_name); ?></p>
+                                        <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                        </a>
+                                    </li>
+                                <?php
+                        }
+                        ?>
                     </ul>
                 </div>
 

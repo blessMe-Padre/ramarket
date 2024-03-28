@@ -50,13 +50,13 @@ get_header();
                             $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
 
                             ?>
-                                        <a href="<?php echo esc_url($category_link); ?>" class="swiper-slide category-slide">
-                                            <div class="relative">
-                                                <p><?php echo esc_html($category_name); ?></p>
-                                                <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                            </div>
-                                        </a>
-                                                <?php
+                            <a href="<?php echo esc_url($category_link); ?>" class="swiper-slide category-slide">
+                                <div class="relative">
+                                    <p class="font-medium"><?php echo esc_html($category_name); ?></p>
+                                    <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                </div>
+                            </a>
+                                    <?php
                         }
                         ?>
 
@@ -228,6 +228,22 @@ get_header();
             </ul>
         </div>
     </section>
+
+    <section class="reviews-section py-20" data-scroll>
+            <div class="container">
+                <h2 class="title">Что о нас говорят клиенты</h2>
+                <div class="w-0 min-w-[100%] relative">
+                <div class="reviews-section-swiper swiper">
+                    <?php echo show_reviews_one(); ?>
+                 </div>
+                    
+                    <div class="swiper-button-prev swiper-button-prev--reviews-section"></div>
+                    <div class="swiper-button-next swiper-button-next--reviews-section"></div>
+                </div>
+
+            </div>
+
+        </section>
 
     <section class="contact py-20" data-scroll>
         <div class="container">

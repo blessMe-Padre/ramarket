@@ -159,10 +159,10 @@ export const initSlider = () => {
         });
     }
 
-    // слайдер Отзывы на странице О магазине
-    const reviewsAboutCompany = document.querySelector('.about__company__reviews');
+    // слайдер Отзывы с секции reviews 
+    const reviewsAboutCompany = document.querySelector('.reviews-section');
     if (reviewsAboutCompany) {
-        const item = new Swiper('.about__shop__reviews-swiper', {
+        const item = new Swiper('.reviews-section-swiper', {
             loop: true,
             spaceBetween: 30,
             speed: 1000,
@@ -181,8 +181,8 @@ export const initSlider = () => {
             },
 
             navigation: {
-                nextEl: '.swiper-button-next--about__shop__reviews',
-                prevEl: '.swiper-button-prev--about__shop__reviews',
+                nextEl: '.swiper-button-next--reviews-section',
+                prevEl: '.swiper-button-prev--reviews-section',
             },
         });
     }

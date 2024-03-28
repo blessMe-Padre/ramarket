@@ -12,6 +12,8 @@ import { init404 } from "./module/404.js";
 import { initLk } from "./module/lk.js";
 import { initCheckBox } from "./module/checkbox.js";
 import { initStickyHeader } from "./module/sticky-header.js";
+import { initScrollAnimation } from "./module/scroll-animation.js";
+import { initMask } from "./module/phone-mask.js";
 
 function rebuild_input_file(input) {
     let input_id = input.attr('id');
@@ -35,7 +37,10 @@ window.addEventListener('DOMContentLoaded', () => {
     init404();
     initLk();
     initCheckBox();
+    initScrollAnimation();
     initStickyHeader();
+    initScrollAnimation();
+    initMask();
     // DOMContentLoaded
 
     rebuild_input_file(jQuery('input[name="featured_image"]'));

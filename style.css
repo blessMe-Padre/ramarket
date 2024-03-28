@@ -9,6 +9,18 @@ Version: 0.0.1
 
 /* Импорт кастомных стилей для компонентов */
 
+[data-scroll] {
+    transition: opacity 1s;
+}
+
+[data-scroll="in"] {
+    opacity: 1;
+}
+
+[data-scroll="out"] {
+    opacity: 0;
+}
+
 @font-face {
     font-family: 'Futura PT';
 

@@ -18,7 +18,7 @@ get_header();
         </div>
     </section>
 
-    <section class="category">
+    <section class="category" data-scroll>
         <h2 class="visually-hidden">Категории натуральных продуктов</h2>
         <div class="container">
             <div class="w-0 min-w-[100%] relative">
@@ -50,13 +50,13 @@ get_header();
                             $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
 
                             ?>
-                                    <a href="<?php echo esc_url($category_link); ?>" class="swiper-slide category-slide">
-                                        <div class="relative">
-                                            <p><?php echo esc_html($category_name); ?></p>
-                                            <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                        </div>
-                                    </a>
-                                            <?php
+                                        <a href="<?php echo esc_url($category_link); ?>" class="swiper-slide category-slide">
+                                            <div class="relative">
+                                                <p><?php echo esc_html($category_name); ?></p>
+                                                <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                            </div>
+                                        </a>
+                                                <?php
                         }
                         ?>
 
@@ -70,7 +70,7 @@ get_header();
         </div>
     </section>
 
-    <section class="new py-20">
+    <section class="new py-20" data-scroll>
         <div class="container">
             <h2 class="title">Новые поступления</h2>
             <div class="w-0 min-w-[100%] relative">
@@ -134,7 +134,7 @@ get_header();
         </div>
     </section>
 
-    <section class="favorite py-20">
+    <section class="favorite py-20" data-scroll>
         <div class="container">
             <h2 class="title">Любимые товары покупателей</h2>
             <div class="w-0 min-w-[100%] relative">
@@ -198,7 +198,7 @@ get_header();
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" data-scroll>
         <div class="container">
             <h2 class="about__title">RA market —</h2>
             <p class="about__text">компания с заботой о каждом клиенте вот уже 20 лет. Мы умеем не только
@@ -229,7 +229,7 @@ get_header();
         </div>
     </section>
 
-    <section class="contact py-20">
+    <section class="contact py-20" data-scroll>
         <div class="container">
             <h2 class="title">Мы во Владивостоке</h2>
             <div class="contact__header flex items-center flex-wrap gap-4 sm:gap-8 mb-12">

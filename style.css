@@ -5096,3 +5096,46 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
 .woocommerce-LoopProduct-link.woocommerce-loop-product__link .price span:nth-child(2) {
     display: none !important;
 }
+
+.new-card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cart-collaterals--card-page .h3_order {
+    display: none;
+}
+
+.cart-collaterals--card-page .cart_totals.calculated_shipping {
+    float: none !important;
+    width: 100% !important;
+}
+
+.cart-collaterals--card-page .woocommerce-shipping-methods {
+    display: none !important;
+}
+
+.cart-collaterals--card-page .shop_address._tabs-block._active {
+    display: none !important;
+}
+
+.cart-collaterals--card-page .shipping_address._tabs-block {
+    display: none !important;
+}
+
+.cart-collaterals--card-page .woocommerce-shipping-destination {
+    display: none !important;
+}
+
+.cart-collaterals--card-page .shipping-calculator-button {
+    display: none !important;
+}
+
+.cart-collaterals--card-page {}
+
+.cart-collaterals--card-page {}
+
+.cart-collaterals--card-page {}
+
+.cart-collaterals--card-page {}

@@ -5136,4 +5136,31 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     padding: 20px;
     background-color: var(--light-gray);
     margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    position: relative;
+}
+
+.product-remove {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.product-thumbnail {
+    flex: 0 0 auto;
+}
+
+.product-thumbnail a {
+    display: inline-block;
+}
+
+
+.product-thumbnail img {
+    width: 80px;
+    height: 80px;
 }

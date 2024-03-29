@@ -5099,8 +5099,8 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
 
 .new-card-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
 }
 
 .cart-collaterals--card-page .h3_order {
@@ -5132,10 +5132,8 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     display: none !important;
 }
 
-.cart-collaterals--card-page {}
-
-.cart-collaterals--card-page {}
-
-.cart-collaterals--card-page {}
-
-.cart-collaterals--card-page {}
+.woocommerce-cart-form__cart-item {
+    padding: 20px;
+    background-color: var(--light-gray);
+    margin-bottom: 20px;
+}

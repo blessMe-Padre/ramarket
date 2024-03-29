@@ -109,13 +109,13 @@
                         $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
 
                         ?>
-                                    <li class="relative">
-                                        <a href="<?php echo esc_url($category_link); ?>">
-                                        <p><?php echo esc_html($category_name); ?></p>
-                                        <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                        </a>
-                                    </li>
-                                <?php
+                                                                    <li class="relative">
+                                                                        <a href="<?php echo esc_url($category_link); ?>">
+                                                                        <p><?php echo esc_html($category_name); ?></p>
+                                                                        <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                                                        </a>
+                                                                    </li>
+                                                                <?php
                     }
                     ?>
                 </ul>
@@ -147,18 +147,17 @@
                             $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
 
                             ?>
-                                            <li class="relative">
-                                                <a href="<?php echo esc_url($category_link); ?>">
-                                                <p><?php echo esc_html($category_name); ?></p>
-                                                <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                                </a>
-                                            </li>
-                                        <?php
+                                                                            <li class="relative">
+                                                                                <a href="<?php echo esc_url($category_link); ?>">
+                                                                                <p><?php echo esc_html($category_name); ?></p>
+                                                                                <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                                                                </a>
+                                                                            </li>
+                                                                        <?php
                         }
                         ?>
                     </ul>
                 </div>
-
 
                 <?php get_search_form(); ?>
 
@@ -168,14 +167,25 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-cart.svg"
                                 width="20" height="20" alt="cart">
                             <span><?php echo minicart_count_after_content(); ?>&nbsp;шт&nbsp;(<?php minicard_subtotal(); ?>)</span>
-                            
                         </div>
 
-                        <div class="header__modal-wrapper">
-                        <div class="mini-card">
-                                    <?php the_widget('WC_Widget_Cart', 'title=') ?>
+                        <?php
+                        // если страница оформления заказа
+                        
+                        if (is_checkout()) {
+
+                        } elseif (is_cart()) {
+
+                        } else {
+                            ?>
+                                <div class="header__modal-wrapper">
+                                    <div class="mini-card">
+                                        <?php the_widget('WC_Widget_Cart', 'title=') ?>
+                                    </div>
                                 </div>
-                        </div>
+                                <?php
+                        }
+                        ?>
                     </div>
 
                     <div class="relative">

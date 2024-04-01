@@ -1260,6 +1260,20 @@ button.swiper-pagination-bullet {
     min-width: 260px;
 }
 
+.header__modal-wrapper--cart {
+    min-width: 360px;
+}
+
+@media (max-width: 560px) {
+    .header__modal-wrapper--cart {
+        min-width: 260px;
+    }
+
+    .header__modal-wrapper--cart .quantity {
+        background-color: var(--light-gray) !important;
+    }
+}
+
 .header__modal-wrapper.is-active {
     opacity: 1;
     visibility: visible;
@@ -1300,16 +1314,24 @@ button.swiper-pagination-bullet {
 }
 
 .catalog-menu li {
-    padding: 30px 20px;
-    min-width: 240px;
+    padding: 20px 20px;
+    width: 120px;
+    height: 120px;
     border-radius: 10px;
     background: #e8f1eb;
+}
+
+.catalog-menu p {
+    font-weight: 600;
+    line-height: 1.1;
+    z-index: 1;
 }
 
 .catalog-menu img {
     position: absolute;
     bottom: 0;
     right: 0;
+    border-radius: 10px;
 }
 
 .catalog-menu-mobile {
@@ -2928,6 +2950,7 @@ body {
     margin-left: auto;
     padding-right: 20px;
     padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 560px) {
@@ -4182,6 +4205,7 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
 }
 
 .quantity {
+    display: flex !important;
     margin-bottom: 10px !important;
     padding: 5px 10px !important;
     background-color: #ffffff !important;
@@ -5103,6 +5127,13 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     gap: 40px;
 }
 
+@media (max-width: 839px) {
+    .new-card-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 .cart-collaterals--card-page .h3_order {
     display: none;
 }
@@ -5159,8 +5190,129 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     display: inline-block;
 }
 
-
 .product-thumbnail img {
     width: 80px;
     height: 80px;
+}
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+    float: none;
+    width: 100%;
+}
+
+.return-to-shop {
+    margin-bottom: 25px !important;
+}
+
+.button.wc-backward {
+    display: inline-block;
+    font-family: "Futura PT", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff !important;
+    border-radius: 25px !important;
+    padding: 10px 30px;
+    background-color: #1a9640 !important;
+    transition: all 0.3s ease-in;
+}
+
+.coupon {
+    display: flex;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.coupon .button {
+    display: inline-block;
+    font-family: "Futura PT", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff !important;
+    border-radius: 25px !important;
+    padding: 10px 30px;
+    background-color: #1a9640 !important;
+    transition: all 0.3s ease-in;
+}
+
+.coupon input {
+    padding: 5px 10px !important;
+    border-radius: 25px !important;
+    border: 1px solid !important;
+}
+
+
+.order-rows {}
+
+.order-rows-span {
+    display: none;
+}
+
+@media (max-width: 560px) {
+    .woocommerce-cart-form__cart-item {
+        gap: 5px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-name a {
+        font-weight: 500;
+    }
+
+    .product-quantity {
+        width: 100%;
+    }
+
+    .product-subtotal {
+        font-weight: 500;
+    }
+
+    .order-rows-span {
+        display: block;
+    }
+
+    .order-rows {
+        display: flex !important;
+        gap: 10px !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .order-rows::before {
+        content: none !important;
+    }
+}
+
+/* mini-card */
+
+.woocommerce-mini-cart-item.mini_cart_item {
+    background-color: var(--light-gray);
+    padding: 5px 10px 5px 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.woocommerce ul.cart_list li img,
+.woocommerce ul.product_list_widget li img {
+    width: 80px;
+    height: 80px;
+}
+
+/* product-sticker */
+
+.product-sticker {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: var(--green);
+    padding: 5px 10px;
+}
+
+.catalog-menu--all-category {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    box-shadow: none;
 }

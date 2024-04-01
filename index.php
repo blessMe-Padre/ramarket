@@ -13,7 +13,7 @@ get_header();
             <div class="hero__wrapper">
                 <h2 class="hero__title">Территория натуральных продуктов</h2>
 
-                <a class="hero__button" href="shop/">В каталог</a>
+                <a class="hero__button" href="/?page_id=15">В каталог</a>
             </div>
         </div>
     </section>
@@ -56,7 +56,7 @@ get_header();
                                     <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
                                 </div>
                             </a>
-                                    <?php
+                            <?php
                         }
                         ?>
 
@@ -92,13 +92,16 @@ get_header();
                                 $product_id = get_the_ID();
 
                                 echo '<li class="relative swiper-slide new-slide card h-auto relative card product type-product post-46 status-publish first instock product_cat-new has-post-thumbnail shipping-taxable purchasable product-type-simple woocommerce">';
+
+                                echo '<span class="product-sticker">Эко</span>';
+
                                 echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
                                 if (has_post_thumbnail($loop->post->ID)) {
                                     echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
                                 } else {
                                     echo '<img src="' . get_template_directory_uri() . '/src/img/woocommerce-placeholder-300x300.png" alt="">';
                                 }
-                                //echo ''
+
                                 echo '<span class="card__attr mb-5">250 мл</span>';
                                 echo '<h3 class="card__title">' . esc_html($loop->post->post_title) . '</h3>';
                                 echo '</a>';
@@ -157,6 +160,7 @@ get_header();
                                 $product_id = get_the_ID();
 
                                 echo '<li class="relative swiper-slide new-slide card h-auto relative card product type-product post-46 status-publish first instock product_cat-new has-post-thumbnail shipping-taxable purchasable product-type-simple woocommerce">';
+                                echo '<span class="product-sticker">Эко</span>';
                                 echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
                                 if (has_post_thumbnail($loop->post->ID)) {
                                     echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');

@@ -33,10 +33,14 @@ $shipping   = $order->get_formatted_shipping_address();
 				<?php if ( $order->get_billing_phone() ) : ?>
 					<br/><?php echo wc_make_phone_clickable( $order->get_billing_phone() ); ?>
 				<?php endif; ?>
+				
 				<?php if ( $order->get_billing_email() ) : ?>
 					<br/><?php echo esc_html( $order->get_billing_email() ); ?>
 				<?php endif; ?>
-				<?php
+				
+
+	
+    			<?php
 				/**
 				 * Fires after the core address fields in emails.
 				 *
@@ -59,6 +63,14 @@ $shipping   = $order->get_formatted_shipping_address();
 					<?php echo wp_kses_post( $shipping ); ?>
 					<?php if ( $order->get_shipping_phone() ) : ?>
 						<br /><?php echo wc_make_phone_clickable( $order->get_shipping_phone() ); ?>
+					<?php endif; ?>
+					
+						<?php if ( $order->get_shipping_address_1() ) : ?>
+						<br /><?php echo wc_make_phone_clickable( $order->get_shipping_address_1() ); ?>
+					<?php endif; ?>
+					
+						<?php if ( $order->get_shipping_address_2() ) : ?>
+						<br /><?php echo wc_make_phone_clickable( $order->get_shipping_address_2() ); ?>
 					<?php endif; ?>
 					<?php
 					/**

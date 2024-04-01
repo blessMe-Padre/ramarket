@@ -40,18 +40,18 @@ defined('ABSPATH') || exit;
 
 		<?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()): ?>
 
-			<?php do_action('woocommerce_cart_totals_before_shipping'); ?>
+					<?php do_action('woocommerce_cart_totals_before_shipping'); ?>
 
-			<?php wc_cart_totals_shipping_html(); ?>
+					<?php wc_cart_totals_shipping_html(); ?>
 
-			<?php do_action('woocommerce_cart_totals_after_shipping'); ?>
+					<?php do_action('woocommerce_cart_totals_after_shipping'); ?>
 
 		<?php elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')): ?>
 
-				<tr class="shipping">
-				<th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
-				<td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>"><?php woocommerce_shipping_calculator(); ?></td>
-				</tr>
+						<tr class="shipping">
+						<th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
+						<td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>"><?php woocommerce_shipping_calculator(); ?></td>
+						</tr>
 
 		<?php endif; ?>
 
@@ -75,19 +75,19 @@ defined('ABSPATH') || exit;
 			if ('itemized' === get_option('woocommerce_tax_total_display')) {
 				foreach (WC()->cart->get_tax_totals() as $code => $tax) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 					?>
-					<tr class="tax-rate tax-rate-<?php echo esc_attr(sanitize_title($code)); ?>">
-					<th><?php echo esc_html($tax->label) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                             ?></th>
-					<td data-title="<?php echo esc_attr($tax->label); ?>"><?php echo wp_kses_post($tax->formatted_amount); ?></td>
-					</tr>
-					<?php
+												<tr class="tax-rate tax-rate-<?php echo esc_attr(sanitize_title($code)); ?>">
+												<th><?php echo esc_html($tax->label) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                                     ?></th>
+												<td data-title="<?php echo esc_attr($tax->label); ?>"><?php echo wp_kses_post($tax->formatted_amount); ?></td>
+												</tr>
+												<?php
 				}
 			} else {
 				?>
-			<tr class="tax-total">
-				<th><?php echo esc_html(WC()->countries->tax_or_vat()) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                             ?></th>
-				<td data-title="<?php echo esc_attr(WC()->countries->tax_or_vat()); ?>"><?php wc_cart_totals_taxes_total_html(); ?></td>
-			</tr>
-			<?php
+										<tr class="tax-total">
+											<th><?php echo esc_html(WC()->countries->tax_or_vat()) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                                     ?></th>
+											<td data-title="<?php echo esc_attr(WC()->countries->tax_or_vat()); ?>"><?php wc_cart_totals_taxes_total_html(); ?></td>
+										</tr>
+										<?php
 			}
 		}
 		?>
@@ -99,12 +99,12 @@ defined('ABSPATH') || exit;
 			?>
 		<tr class="order-total">
 			<th>скидка по промокоду</th>
-			<td><span class="percent"><?php echo $discount_percent; ?> %</span></td>
+			<td class="order-rows"><span class="order-rows-span">Cкидка по промокоду</span><span class="percent"><?php echo $discount_percent; ?> %</span></td>
 		</tr>
 		</div>
 		<tr>
 			<th>Товары</th>
-			<td>
+			<td class="order-rows">
 				<span class="total"><?php echo number_format((int) $totals['cart_contents_total'], 0, '.', '&nbsp;') . '&nbsp;' . get_woocommerce_currency_symbol(); ?></span>
 				<?php if (!empty(WC()->cart->get_coupons())) { ?>
 							<span class="subtotal"><?php echo number_format((int) $totals['subtotal'], 0, '.', '&nbsp;') . '&nbsp;' . get_woocommerce_currency_symbol(); ?></span>

@@ -5,7 +5,8 @@ export const initTab = () => {
 
     tabButtons.forEach(button => {
         button.addEventListener('click', (evt) => {
-            evt.preventDefault();
+            //  Если раскоментить эту строку, то возникают проблемы, если tab навешать на <input type="radio"> или <label> связаный с ним
+            //evt.preventDefault();
             const targetBtn = evt.currentTarget;
             const targetBtnId = targetBtn.getAttribute('data-tab');
             const currentTab = document.querySelector(targetBtnId);

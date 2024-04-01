@@ -2,6 +2,7 @@
 // Легковесная маска для телефона
 const initMask = () => {
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    console.log(phoneInputs);
     const COUNTRY_CODE = '+7';
     const length = COUNTRY_CODE.length;
 

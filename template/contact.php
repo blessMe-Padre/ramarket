@@ -36,7 +36,7 @@ get_header();
                     <a class="font-medium text-sm" href="tel:+79084405742">+ 7 (908) 440-57-42</a>
                 </div>
 
-                <a href="#popup" class="ra-button popup-link">Заказать звонок</button>
+                <a href="#popup" class="ra-button popup-link">Заказать звонок</a>
             </div>
 
             <div class="contact__map rounded-3xl grid">

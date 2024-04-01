@@ -1105,11 +1105,17 @@ button.swiper-pagination-bullet {
     justify-content: center;
     background-color: var(--black);
     flex: 0 0 auto;
+    transition: all 0.3s ease;
 }
 
 .icons--green {
     background-color: var(--green);
 }
+
+.icons--green:hover {
+    opacity: 0.8;
+}
+
 
 @media (max-width: 767px) {
     .icons {
@@ -1190,16 +1196,30 @@ button.swiper-pagination-bullet {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    transition: all 0.3s ease;
 }
+
+.header__item:hover .icons {
+    background-color: var(--green);
+}
+
+.header__item:hover p {
+    color: var(--green);
+}
+
+.header__item:hover a {
+    color: var(--green);
+}
+
 
 .header__item p {
     line-height: 1;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .header__item a {
     line-height: 1;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .header__inner {
@@ -1239,7 +1259,28 @@ button.swiper-pagination-bullet {
     border-radius: 25px;
     padding: 10px 30px;
     cursor: pointer;
+
+    transition: all 0.3s ease;
 }
+
+
+.header__lk-button svg {
+    fill: #292E35;
+}
+
+.header__lk-button--heart svg {
+    fill: #E11212;
+}
+
+.header__lk-button:hover {
+    background-color: var(--green);
+    color: #ffffff;
+}
+
+.header__lk-button:hover svg {
+    fill: #ffffff;
+}
+
 
 .header__lk-button span {
     white-space: nowrap;
@@ -4832,17 +4873,20 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     min-height: 135px;
 }
 
-.shipping_address>div {
+.shipping_address>div,
+.lk_shipping_adress {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.shipping_address>div>* {
+.shipping_address>div>*,
+.lk_shipping_adress>* {
     flex: calc(50% - 10px);
 }
 
-.shipping_address>div>*:first-child {
+.shipping_address>div>*:first-child,
+.lk_shipping_adress>*:first-child {
     flex: 100%;
 }
 

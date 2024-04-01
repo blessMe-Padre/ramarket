@@ -5316,3 +5316,8 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     opacity: 1;
     box-shadow: none;
 }
+
+.catalog-menu--all-category li {
+    width: 140px;
+    height: 140px;
+}

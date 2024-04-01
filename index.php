@@ -50,13 +50,13 @@ get_header();
                             $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
 
                             ?>
-                            <a href="<?php echo esc_url($category_link); ?>" class="swiper-slide category-slide">
-                                <div class="relative">
-                                    <p class="font-medium"><?php echo esc_html($category_name); ?></p>
-                                    <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                </div>
-                            </a>
-                            <?php
+                                                                <a href="<?php echo esc_url($category_link); ?>" class="swiper-slide category-slide">
+                                                                    <div class="relative">
+                                                                        <p class="font-medium"><?php echo esc_html($category_name); ?></p>
+                                                                        <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                                                    </div>
+                                                                </a>
+                                                                <?php
                         }
                         ?>
 
@@ -91,9 +91,32 @@ get_header();
                                 global $product;
                                 $product_id = get_the_ID();
 
+                                $attr = $product->get_attributes(); // Получаем весь массив с атрибутами товаров
+                        
+                                $array = array(); // Создаем пустой массив
+                                foreach ($attr as $key => $value) {
+                                    $array[$key] = (($value->get_terms())[0]);
+                                }
+
                                 echo '<li class="relative swiper-slide new-slide card h-auto relative card product type-product post-46 status-publish first instock product_cat-new has-post-thumbnail shipping-taxable purchasable product-type-simple woocommerce">';
 
-                                echo '<span class="product-sticker">Эко</span>';
+                                echo '<div class="product-sticker-wrapper">';
+                                if (isset($array['pa_bez-glyutena'])) {
+                                    $bezglyutena = $array['pa_bez-glyutena']->name;
+                                    echo '<span class="product-sticker bg-yellow">';
+                                    echo $bezglyutena;
+                                    echo '</span>';
+                                }
+
+                                if (isset($array['pa_vegan'])) {
+                                    $vegan = $array['pa_vegan']->name;
+                                    echo '<span class="product-sticker bg-light-green">';
+                                    echo $vegan;
+                                    echo '</span>';
+                                }
+
+                                echo '</div>';
+
 
                                 echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
                                 if (has_post_thumbnail($loop->post->ID)) {
@@ -159,8 +182,30 @@ get_header();
                                 global $product;
                                 $product_id = get_the_ID();
 
+                                $attr = $product->get_attributes(); // Получаем весь массив с атрибутами товаров
+                        
+                                $array = array(); // Создаем пустой массив
+                                foreach ($attr as $key => $value) {
+                                    $array[$key] = (($value->get_terms())[0]);
+                                }
+
                                 echo '<li class="relative swiper-slide new-slide card h-auto relative card product type-product post-46 status-publish first instock product_cat-new has-post-thumbnail shipping-taxable purchasable product-type-simple woocommerce">';
-                                echo '<span class="product-sticker">Эко</span>';
+                                echo '<div class="product-sticker-wrapper">';
+                                if (isset($array['pa_bez-glyutena'])) {
+                                    $bezglyutena = $array['pa_bez-glyutena']->name;
+                                    echo '<span class="product-sticker bg-yellow">';
+                                    echo $bezglyutena;
+                                    echo '</span>';
+                                }
+
+                                if (isset($array['pa_vegan'])) {
+                                    $vegan = $array['pa_vegan']->name;
+                                    echo '<span class="product-sticker bg-light-green">';
+                                    echo $vegan;
+                                    echo '</span>';
+                                }
+
+                                echo '</div>';
                                 echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
                                 if (has_post_thumbnail($loop->post->ID)) {
                                     echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');

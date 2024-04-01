@@ -38,6 +38,10 @@ $obem = $array['pa_obem-1']->name;
 $sostav = $array['pa_sostav']->name;
 $primechanie = $array['pa_primechanie-1']->name;
 
+// echo '<pre>';
+// print_r($array);
+// echo '</pre>';
+
 /**
  * Hook: woocommerce_before_single_product.
  *
@@ -86,10 +90,24 @@ if (post_password_required()) {
 		</div>
 
 		<div class="single-product__description">
-			<!-- <div class="mb-7">
-				<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-yellow">Новинки</span>
-				<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-light-green">Эко</span>
-			</div> -->
+			<div class="mb-7">
+
+				<?php if (isset($array['pa_bez-glyutena'])) {
+					$bezglyutena = $array['pa_bez-glyutena']->name;
+					echo '<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-yellow">';
+					echo $bezglyutena;
+					echo '</span>';
+				}
+				?>
+
+				<?php if (isset($array['pa_vegan'])) {
+					$vegan = $array['pa_vegan']->name;
+					echo '<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-light-green">';
+					echo $vegan;
+					echo '</span>';
+				}
+				?>
+			</div>
 
 			<p class="text-xl font-bold mb-5">Пищевая ценность:</p>
 			<?php

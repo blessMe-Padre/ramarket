@@ -5309,15 +5309,17 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
 
 /* product-sticker */
 
-.product-sticker {
+.product-sticker-wrapper {
     position: absolute;
     top: 10px;
     left: 10px;
+}
 
+.product-sticker {
     border-radius: 20px;
     color: #ffffff;
-    background-color: var(--green);
     padding: 5px 10px;
+    margin-right: 10px;
 }
 
 .catalog-menu--all-category {

@@ -25,7 +25,31 @@ if (empty($product) || !$product->is_visible()) {
 }
 ?>
 <li <?php wc_product_class('relative card', $product); ?>>
-	<span class="product-sticker">Эко</span>
+<?php
+$attr = $product->get_attributes(); // Получаем весь массив с атрибутами товаров
+
+$array = array(); // Создаем пустой массив
+
+foreach ($attr as $key => $value) {
+	$array[$key] = (($value->get_terms())[0]);
+}
+
+echo '<div class="product-sticker-wrapper">';
+if (isset($array['pa_bez-glyutena'])) {
+	$bezglyutena = $array['pa_bez-glyutena']->name;
+	echo '<span class="product-sticker bg-yellow">';
+	echo $bezglyutena;
+	echo '</span>';
+}
+
+if (isset($array['pa_vegan'])) {
+	$vegan = $array['pa_vegan']->name;
+	echo '<span class="product-sticker bg-light-green">';
+	echo $vegan;
+	echo '</span>';
+}
+echo '</div>';
+?>
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.

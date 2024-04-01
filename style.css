@@ -5291,11 +5291,21 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     margin-bottom: 20px !important;
 }
 
+.woocommerce-mini-cart-item.mini_cart_item span {
+    background-color: var(--light-gray) !important;
+}
+
 .woocommerce ul.cart_list li img,
 .woocommerce ul.product_list_widget li img {
     width: 80px;
     height: 80px;
 }
+
+.woocommerce ul.cart_list li a,
+.woocommerce ul.product_list_widget li a {
+    font-size: 16px;
+}
+
 
 /* product-sticker */
 

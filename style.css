@@ -1374,7 +1374,7 @@ button.swiper-pagination-bullet {
     width: 120px;
     height: 120px;
     border-radius: 10px;
-    background: #e8f1eb;
+    /* background: #e8f1eb; */
     transition: all 0.3s ease;
 }
 
@@ -1564,7 +1564,7 @@ button.swiper-pagination-bullet {
 .category-slide>div {
     padding: 30px 20px;
     border-radius: 10px;
-    background: #fff4cf;
+    /* background: #fff4cf; */
     overflow: hidden;
 }
 

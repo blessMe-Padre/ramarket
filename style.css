@@ -1605,6 +1605,16 @@ button.swiper-pagination-bullet {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.recommendation-slide:hover {
+    background-color: var(--green);
+}
+
+.recommendation-slide:hover p,
+.recommendation-slide:hover span {
+    color: #ffffff;
 }
 
 .recommendation-slide p {

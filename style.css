@@ -1831,6 +1831,10 @@ button.swiper-pagination-bullet {
     transition: all 0.3s ease;
 }
 
+.side-menu>li>a:first-child {
+    font-weight: 600;
+}
+
 .side-menu li {
     transition: all 0.3s ease;
     margin-bottom: 10px;
@@ -1847,7 +1851,7 @@ button.swiper-pagination-bullet {
     transform: none;
     transform-origin: unset;
     position: static;
-    padding-left: 20px;
+    /* padding-left: 20px; */
 }
 
 .side-menu li ul.is-active {
@@ -1856,10 +1860,21 @@ button.swiper-pagination-bullet {
     height: 100%;
 }
 
+.side-menu li ul li {
+    margin: 15px 0;
+}
+
 .catalog__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+
+.categories-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 @media (max-width: 768px) {

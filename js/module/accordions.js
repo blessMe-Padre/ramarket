@@ -29,7 +29,7 @@ export const initAccordionMenu = () => {
 
 
     const addAccordionArrowClass = () => {
-        const liElements = document.querySelectorAll('.side-menu li');
+        const liElements = document.querySelectorAll('.side-menu > li');
 
         liElements.forEach(li => {
             const hasUlChild = li.querySelector('ul') !== null;

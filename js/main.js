@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initNav();
     initSlider();
     initCurrentYear();
-    initScrollToTop();
+    // initScrollToTop();
     initScroll();
     baguetteBox.run('.gallery-wrapper');
     initNavModal();

@@ -1142,9 +1142,18 @@ button.swiper-pagination-bullet {
     position: fixed !important;
 }
 
+.header-row.is-active {
+    display: none;
+}
+
+.header__inner.is-active {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .header-fix {
-    background: rgba(255, 255, 255, .9);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+    background: rgba(255, 255, 255);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
     z-index: 9999;
 }
 
@@ -1360,6 +1369,12 @@ button.swiper-pagination-bullet {
     height: 120px;
     border-radius: 10px;
     background: #e8f1eb;
+    transition: all 0.3s ease;
+}
+
+.catalog-menu li:hover {
+    background-color: var(--green);
+    color: #ffffff;
 }
 
 .catalog-menu p {
@@ -1549,6 +1564,7 @@ button.swiper-pagination-bullet {
     background-color: #fff;
     border-radius: 100%;
     left: -20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .swiper-button-next {
@@ -1557,6 +1573,7 @@ button.swiper-pagination-bullet {
     background-color: #fff;
     border-radius: 100%;
     right: -20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .swiper-button-prev::after {

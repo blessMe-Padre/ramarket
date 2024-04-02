@@ -12,7 +12,7 @@
 <body <?php body_class(); ?>>
     <div class="h-screen grid grid-rows-[auto_1fr_auto]">
         <header class="z-10 w-full md-28 transition-colors header">
-            <div class="container gap-5 items-center justify-between flex md:pt-2">
+            <div class="container gap-5 items-center justify-between flex md:pt-2 header-row">
                 <a href="/">
                     <img class="header__logo" loading="lazy"
                         src="<?php echo get_template_directory_uri(); ?>/src/img/logo.svg" width="195" height="55"
@@ -109,13 +109,13 @@
                         $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
 
                         ?>
-                                                    <li class="relative">
-                                                        <a href="<?php echo esc_url($category_link); ?>">
-                                                        <p><?php echo esc_html($category_name); ?></p>
-                                                        <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                                        </a>
-                                                    </li>
-                                                <?php
+                        <li class="relative">
+                            <a href="<?php echo esc_url($category_link); ?>">
+                            <p><?php echo esc_html($category_name); ?></p>
+                            <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                            </a>
+                        </li>
+                    <?php
                     }
                     ?>
                 </ul>
@@ -147,13 +147,13 @@
                             $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
 
                             ?>
-                                                <li class="relative">
-                                                    <a href="<?php echo esc_url($category_link); ?>">
-                                                    <p><?php echo esc_html($category_name); ?></p>
-                                                    <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                                    </a>
-                                                </li>
-                                            <?php
+                        <li class="relative">
+                            <a href="<?php echo esc_url($category_link); ?>">
+                            <p><?php echo esc_html($category_name); ?></p>
+                            <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                            </a>
+                        </li>
+                    <?php
                         }
                         ?>
                     </ul>
@@ -182,12 +182,12 @@
 
                         } else {
                             ?>
-                                                    <div class="header__modal-wrapper header__modal-wrapper--cart">
-                                                        <div class="mini-card">
-                                                            <?php the_widget('WC_Widget_Cart', 'title=') ?>
-                                                        </div>
-                                                    </div>
-                                                    <?php
+                                                            <div class="header__modal-wrapper header__modal-wrapper--cart">
+                                                                <div class="mini-card">
+                                                                    <?php the_widget('WC_Widget_Cart', 'title=') ?>
+                                                                </div>
+                                                            </div>
+                                                            <?php
                         }
                         ?>
                     </div>

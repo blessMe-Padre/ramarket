@@ -1860,10 +1860,6 @@ button.swiper-pagination-bullet {
     height: 100%;
 }
 
-.side-menu li ul li {
-    margin: 15px 0;
-}
-
 .catalog__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1875,6 +1871,8 @@ button.swiper-pagination-bullet {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+    margin: 10px 0;
+    padding-right: 5px;
 }
 
 @media (max-width: 768px) {

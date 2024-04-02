@@ -1931,35 +1931,39 @@ button.swiper-pagination-bullet {
 .filter-main .wpfMainWrapper .wpfCheckbox::before {
     content: '';
     position: absolute;
-    top: -1px;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: var(--gray);
-    border-radius: 10px;
+    border-radius: 25px;
     cursor: pointer;
     width: 44px !important;
     height: 24px;
 }
 
+.filter-main .wpfMainWrapper .wpfCheckbox.is-active::before {
+    background-color: var(--green);
+}
+
 .filter-main .wpfMainWrapper .wpfCheckbox label {
     position: relative;
-    width: 22px;
-    height: 22px;
-    background-color: #0e0f0e;
+    width: 20px !important;
+    height: 20px !important;
+    background-color: #f2f2f2;
     border-radius: 50%;
-    left: 3px;
+    left: 2px;
     top: 2px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: left 0.3s ease, background-color 0.3s ease;
     z-index: 2;
 }
 
 .filter-main .wpfMainWrapper .wpfCheckbox input:checked+.wpfCheckbox label {
-    transform: translateX(19px);
+    /* transform: translateX(19px); */
 }
 
 .filter-main .wpfMainWrapper .wpfFilterWrapper .wpfCheckbox input[type="checkbox"]:checked+label {
-    transform: translateX(19px);
+    left: 22px;
 }
 
 .filter-main .wpfMainWrapper .wpfFilterVerScroll {

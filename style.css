@@ -1920,6 +1920,10 @@ button.swiper-pagination-bullet {
 
 /* input checkbox */
 
+.filter-main .wpfMainWrapper .wpfFilterWrapper .wpfCheckbox input[type="checkbox"]+label::before {
+    content: none !important;
+}
+
 .filter-main .wpfMainWrapper .wpfCheckbox {
     position: relative;
 }
@@ -1931,7 +1935,7 @@ button.swiper-pagination-bullet {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var(--green);
+    background-color: var(--gray);
     border-radius: 10px;
     cursor: pointer;
     width: 44px !important;
@@ -1942,7 +1946,7 @@ button.swiper-pagination-bullet {
     position: relative;
     width: 22px;
     height: 22px;
-    background-color: #f2f2f2;
+    background-color: #0e0f0e;
     border-radius: 50%;
     left: 3px;
     top: 2px;
@@ -1956,7 +1960,6 @@ button.swiper-pagination-bullet {
 
 .filter-main .wpfMainWrapper .wpfFilterWrapper .wpfCheckbox input[type="checkbox"]:checked+label {
     transform: translateX(19px);
-    /* background-color: var(--red); */
 }
 
 .filter-main .wpfMainWrapper .wpfFilterVerScroll {
@@ -1980,9 +1983,6 @@ button.swiper-pagination-bullet {
     gap: 20px;
 }
 
-.filter-main .wpfMainWrapper .wpfFilterWrapper .wpfCheckbox input[type="checkbox"]+label::before {
-    content: none !important;
-}
 
 .filter-main .wpfMainWrapper .wpfDisplay .wpfValue {
     margin-left: 10px !important;

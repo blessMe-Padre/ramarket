@@ -27,21 +27,23 @@ export const initCheckBox = () => {
     // ==================================================================================================
 
     const checkbox1 = document.querySelector('.filter-main input[type="checkbox"]');
-    console.log(checkbox1);
-    function updateActiveClass1() {
-        if (this.checked) {
-            this.closest('.wpfCheckbox').classList.add('is-active');
-        } else {
-            this.closest('.wpfCheckbox').classList.remove('is-active');
+
+    if (checkbox1) {
+
+        function updateActiveClass1() {
+            if (this.checked) {
+                this.closest('.wpfCheckbox').classList.add('is-active');
+            } else {
+                this.closest('.wpfCheckbox').classList.remove('is-active');
+            }
+        }
+
+        checkbox1.addEventListener('change', updateActiveClass1);
+
+        if (checkbox1.checked) {
+            checkbox1.closest('.wpfCheckbox').classList.add('is-active');
         }
     }
-
-    checkbox1.addEventListener('change', updateActiveClass1);
-
-    if (checkbox1.checked) {
-        checkbox1.closest('.wpfCheckbox').classList.add('is-active');
-    }
-
 
     // const umField = document.querySelector('#um_field_93_avatar');
     // if (umField) {

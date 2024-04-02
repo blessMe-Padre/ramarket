@@ -1,7 +1,6 @@
 export const initCheckBox = () => {
     // Сначала получаем все чекбоксы внутри элементов с классом 'wpfLiLabel'
     const checkboxes = document.querySelectorAll('.filters-row .wpfLiLabel .wpfCheckbox input[type="checkbox"]');
-
     // Функция для обновления класса 'is-active'
     function updateActiveClass() {
         // Проверяем, установлен ли флажок
@@ -27,30 +26,21 @@ export const initCheckBox = () => {
 
     // ==================================================================================================
 
-    const checkboxes1 = document.querySelectorAll('.filter-main .wpfLiLabel .wpfCheckbox input[type="checkbox"]');
-    // Функция для обновления класса 'is-active'
-    function updateActiveClass() {
-        // Проверяем, установлен ли флажок
+    const checkbox1 = document.querySelector('.filter-main input[type="checkbox"]');
+    console.log(checkbox1);
+    function updateActiveClass1() {
         if (this.checked) {
-            // Если да, добавляем класс 'is-active' к родительскому элементу 'wpfLiLabel'
             this.closest('.wpfCheckbox').classList.add('is-active');
         } else {
-            // Если нет, удаляем класс 'is-active'
             this.closest('.wpfCheckbox').classList.remove('is-active');
         }
     }
 
-    // Добавляем обработчик событий к каждому чекбоксу
-    checkboxes1.forEach(function (checkbox) {
-        checkbox.addEventListener('change', updateActiveClass);
+    checkbox1.addEventListener('change', updateActiveClass1);
 
-        // Начальное обновление классов при загрузке страницы
-        if (checkbox.checked) {
-            checkbox.closest('.wpfCheckbox').classList.add('is-active');
-        }
-    });
-
-
+    if (checkbox1.checked) {
+        checkbox1.closest('.wpfCheckbox').classList.add('is-active');
+    }
 
 
     // const umField = document.querySelector('#um_field_93_avatar');

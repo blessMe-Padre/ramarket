@@ -2012,7 +2012,8 @@ button.swiper-pagination-bullet {
 }
 
 .filters-row .wpfLiLabel.is-active {
-    box-shadow: 6px 6px 0px 0px #6EC2A7;
+    border: 1px solid var(--green);
+    color: var(--green);
 }
 
 .filters-row .wpfFilterWrapper .wpfCheckbox label {
@@ -5429,4 +5430,19 @@ a.remove.remove_from_cart_button {
     left: -4px !important;
     background-color: #000 !important;
     border-radius: 100% !important;
+}
+
+.woocommerce-ordering select {
+    display: block;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 10px 15px;
+}
+
+.woocommerce-ordering select option:hover {
+    background-color: var(--green);
+}
+
+.wpfFilterWrapper {
+    margin-top: 40px !important;
 }

@@ -22,7 +22,7 @@ function theme_add_scripts()
 
 
     // подключаем основной файл стилей темы
-    wp_enqueue_style('style', get_stylesheet_uri(), '', '0.0.7');
+    wp_enqueue_style('style', get_stylesheet_uri(), '', '0.0.11');
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -65,6 +65,24 @@ function translate_text($translated)
 {
     $translated = str_ireplace('Подытог', 'Сумма', $translated);
     return $translated;
+}
+
+add_action('woocommerce_email_before_order_table', 'truemisha_ordermeta_in_email', 25, 4);
+
+function truemisha_ordermeta_in_email($order, $sent_to_admin, $plain_text, $email)
+{
+
+    // проверяем, что этот хук задействуется в письме администратора
+    if (true === $sent_to_admin) {
+
+        $dostavka_k = get_post_meta($order->get_order_number(), 'shipping_address_1', true);
+
+        if ($dostavka_k) {
+            echo 'Доставить ко времени: ' . $dostavka_k;
+        }
+
+    }
+
 }
 
 ?>

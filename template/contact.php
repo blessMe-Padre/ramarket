@@ -16,7 +16,7 @@ get_header();
         </div>
     </div>
 
-    <section class="contact py-20">
+    <section class="contact">
         <div class="container">
             <h2 class="title">Мы во Владивостоке</h2>
             <div class="contact__header flex items-center flex-wrap gap-4 sm:gap-8 mb-12">

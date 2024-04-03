@@ -50,13 +50,13 @@ get_header();
                             $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
                             $color = get_field('color', 'term_' . $term_id);
                             ?>
-                                                        <a href="<?php echo esc_url($category_link); ?>" class="h-auto swiper-slide category-slide block">
-                                                            <div class="relative h-auto" style="background:<?php echo $color ? $color : '#fff4cf' ?>;">
-                                                                <p class="font-medium"><?php echo esc_html($category_name); ?></p>
-                                                                <img loading="lazy" src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                                            </div>
-                                                        </a>
-                                                        <?php
+                                                            <a href="<?php echo esc_url($category_link); ?>" class="h-auto swiper-slide category-slide block">
+                                                                <div class="relative h-auto" style="background:<?php echo $color ? $color : '#fff4cf' ?>;">
+                                                                    <p class="font-medium"><?php echo esc_html($category_name); ?></p>
+                                                                    <img loading="lazy" src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                                                </div>
+                                                            </a>
+                                                            <?php
                         }
                         ?>
 
@@ -294,7 +294,7 @@ get_header();
 
         </section>
 
-    <section class="contact  py-10 sm:py-20" data-scroll>
+    <section id="map-section" class="contact  py-10 sm:py-20" data-scroll>
         <div class="container">
             <h2 class="title">Мы во Владивостоке</h2>
             <div class="contact__header flex items-center flex-wrap gap-4 sm:gap-8 mb-12">

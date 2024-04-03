@@ -83,7 +83,7 @@ echo '</div>';
 	 * @hooked woocommerce_template_loop_add_to_cart - 10
 	 */
 	?>
-	<div class="flex flex-wrap items-center gap-5">
+	<div class="flex flex-wrap items-center gap-4">
 		<?php
 		/**
 		 * Hook: woocommerce_after_shop_loop_item_title.

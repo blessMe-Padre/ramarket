@@ -4500,6 +4500,16 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
     .woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
         flex-direction: column;
     }
+
+    .filter-main {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .woocommerce-result-count {
+        display: none;
+    }
 }
 
 

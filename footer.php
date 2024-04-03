@@ -41,7 +41,7 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-phone.svg" width="20"
                             height="20" alt="pin">
                     </div>
-                    <a href="tel:+79084405742">+ 7 (908) 440-57-42</a>
+                    <a class="footer-link" href="tel:+79084405742">+ 7 (908) 440-57-42</a>
                 </div>
                 <div class="flex items-center gap-5 mb-3">
                     <div class="icons">

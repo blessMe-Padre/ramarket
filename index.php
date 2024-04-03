@@ -50,13 +50,13 @@ get_header();
                             $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
                             $color = get_field('color', 'term_' . $term_id);
                             ?>
-                                            <a href="<?php echo esc_url($category_link); ?>" class="h-auto swiper-slide category-slide block">
-                                                <div class="relative h-auto" style="background:<?php echo $color ? $color : '#fff4cf' ?>;">
-                                                    <p class="font-medium"><?php echo esc_html($category_name); ?></p>
-                                                    <img src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                                </div>
-                                            </a>
-                                            <?php
+                                                        <a href="<?php echo esc_url($category_link); ?>" class="h-auto swiper-slide category-slide block">
+                                                            <div class="relative h-auto" style="background:<?php echo $color ? $color : '#fff4cf' ?>;">
+                                                                <p class="font-medium"><?php echo esc_html($category_name); ?></p>
+                                                                <img loading="lazy" src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                                            </div>
+                                                        </a>
+                                                        <?php
                         }
                         ?>
 
@@ -70,7 +70,7 @@ get_header();
         </div>
     </section>
 
-    <section class="new py-20" data-scroll>
+    <section class="new py-10 sm:py-20" data-scroll>
         <div class="container">
             <h2 class="title">Новые поступления</h2>
             <div class="w-0 min-w-[100%] relative">
@@ -118,11 +118,11 @@ get_header();
                                 echo '</div>';
 
 
-                                echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
+                                echo '<a class="rounded-img" href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
                                 if (has_post_thumbnail($loop->post->ID)) {
                                     echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
                                 } else {
-                                    echo '<img src="' . get_template_directory_uri() . '/src/img/woocommerce-placeholder-300x300.png" alt="">';
+                                    echo '<img loading="lazy" src="' . get_template_directory_uri() . '/src/img/woocommerce-placeholder-300x300.png" alt="">';
                                 }
 
                                 echo '<span class="card__attr mb-5">250 мл</span>';
@@ -160,7 +160,7 @@ get_header();
         </div>
     </section>
 
-    <section class="favorite py-20" data-scroll>
+    <section class="favorite py-10 sm:py-20" data-scroll>
         <div class="container">
             <h2 class="title">Любимые товары покупателей</h2>
             <div class="w-0 min-w-[100%] relative">
@@ -206,11 +206,11 @@ get_header();
                                 }
 
                                 echo '</div>';
-                                echo '<a href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
+                                echo '<a class"rounded-img" href="' . get_permalink($loop->post->ID) . '" alt="' . $loop->post->post_title . '">';
                                 if (has_post_thumbnail($loop->post->ID)) {
                                     echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
                                 } else {
-                                    echo '<img src="' . get_template_directory_uri() . '/src/img/woocommerce-placeholder-300x300.png" alt="">';
+                                    echo '<img loading="lazy" src="' . get_template_directory_uri() . '/src/img/woocommerce-placeholder-300x300.png" alt="">';
                                 }
                                 echo '<span class="card__attr mb-5">250 мл</span>';
                                 echo '<h3 class="card__title">' . esc_html($loop->post->post_title) . '</h3>';
@@ -259,18 +259,18 @@ get_header();
 
             <ul class="about__list">
                 <li class="about__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-check.svg" width="60"
+                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-check.svg" width="60"
                         height="60" alt="check">
                     <p>Только качественные
                         и натуральные продукты </p>
                 </li>
                 <li class="about__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-check.svg" width="60"
+                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-check.svg" width="60"
                         height="60" alt="check">
                     <p>Наши поставщики —известные и проверенные бренды</p>
                 </li>
                 <li class="about__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-check.svg" width="60"
+                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-check.svg" width="60"
                         height="60" alt="check">
                     <p>Каждый товар проходит тщательную проверку качества</p>
                 </li>
@@ -278,7 +278,7 @@ get_header();
         </div>
     </section>
 
-    <section class="reviews-section py-20" data-scroll>
+    <section class="reviews-section  py-10 sm:py-20" data-scroll>
             <div class="container">
                 <h2 class="title">Что о нас говорят клиенты</h2>
                 <div class="w-0 min-w-[100%] relative">
@@ -294,7 +294,7 @@ get_header();
 
         </section>
 
-    <section class="contact py-20" data-scroll>
+    <section class="contact  py-10 sm:py-20" data-scroll>
         <div class="container">
             <h2 class="title">Мы во Владивостоке</h2>
             <div class="contact__header flex items-center flex-wrap gap-4 sm:gap-8 mb-12">

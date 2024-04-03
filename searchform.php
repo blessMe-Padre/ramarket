@@ -3,7 +3,7 @@
 
     <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" placeholder="Поиск по товарам..." />
 
-    <button type="submit" id="searchsubmit" value="найти">
+    <button class="search-button" type="submit" id="searchsubmit" value="найти">
         <img src="<?php echo get_template_directory_uri(); ?>/src/img/icons/icon-search.svg" width="21" height="21"
             alt=""></button>
 </form>

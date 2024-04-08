@@ -50,13 +50,13 @@ get_header();
                             $image_url = $category_image[0] ?? get_template_directory_uri() . '/src/img/catalog/image-1.png';
                             $color = get_field('color', 'term_' . $term_id);
                             ?>
-                                                            <a href="<?php echo esc_url($category_link); ?>" class="h-auto swiper-slide category-slide block">
-                                                                <div class="relative h-auto" style="background:<?php echo $color ? $color : '#fff4cf' ?>;">
-                                                                    <p class="font-medium"><?php echo esc_html($category_name); ?></p>
-                                                                    <img loading="lazy" src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
-                                                                </div>
-                                                            </a>
-                                                            <?php
+                                                                <a href="<?php echo esc_url($category_link); ?>" class="h-auto swiper-slide category-slide block">
+                                                                    <div class="relative h-auto" style="background:<?php echo $color ? $color : '#fff4cf' ?>;">
+                                                                        <p class="font-medium"><?php echo esc_html($category_name); ?></p>
+                                                                        <img loading="lazy" src="<?php echo esc_url($image_url); ?>" width="102" height="68" alt="img">
+                                                                    </div>
+                                                                </a>
+                                                                <?php
                         }
                         ?>
 
@@ -318,10 +318,7 @@ get_header();
             </div>
 
             <div class="contact__map rounded-3xl grid">
-                <iframe class="rounded-3xl block"
-                    src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=131.899555%2C43.133904&mode=search&oid=62912864346&ol=biz&z=19.11"
-                    width="100%" height="100%" frameborder="1" allowfullscreen="true"
-                    style="position:relative; height: 100%;"></iframe>
+            <iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=131.899480%2C43.133842&mode=whatshere&whatshere%5Bpoint%5D=131.899480%2C43.133841&whatshere%5Bzoom%5D=17&z=17" width="100%" height="100%" allowfullscreen="true" style="position:relative;"></iframe>
             </div>
         </div>
     </section>

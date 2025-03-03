@@ -29,14 +29,14 @@ foreach ($attr as $key => $value) {
 }
 
 // обращаемся по ключу к каждому атрибуту
-$country = $array['pa_strana']->name;
-$proizvoditel = $array['pa_proizvoditel-1']->name;
-$kkal = $array['pa_kalorijnost-kkal']->name;
-$zhiry = $array['pa_zhiry-g']->name;
-$upakovka = $array['pa_vid-upakovki']->name;
-$obem = $array['pa_obem-1']->name;
-$sostav = $array['pa_sostav']->name;
-$primechanie = $array['pa_primechanie-1']->name;
+$country = isset($array['pa_strana']) ? $array['pa_strana']->name : "не указанно";
+$proizvoditel = isset($array['pa_proizvoditel-1']) ? $array['pa_proizvoditel-1']->name : "не указанно";
+$kkal = isset($array['pa_kalorijnost-kkal']) ? $array['pa_kalorijnost-kkal']->name : "не указанно";
+$zhiry = isset($array['pa_zhiry-g']) ? $array['pa_zhiry-g']->name : "не указанно";
+$upakovka = isset($array['pa_vid-upakovki']) ? $array['pa_vid-upakovki']->name : "не указанно";
+$obem = isset($array['pa_obem-1']) ? $array['pa_obem-1']->name : "не указанно";
+$sostav = isset($array['pa_sostav']) ? $array['pa_sostav']->name : "не указанно";
+$primechanie = isset($array['pa_primechanie-1']) ? $array['pa_primechanie-1']->name : "не указанно";
 
 // echo '<pre>';
 // print_r($array);
@@ -93,25 +93,25 @@ if (post_password_required()) {
 			<div class="mb-7">
 
 				<?php if (isset($array['pa_bez-glyutena'])) {
-					$bezglyutena = $array['pa_bez-glyutena']->name;
-					echo '<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-yellow">';
-					echo $bezglyutena;
-					echo '</span>';
-				}
-				?>
+				// $bezglyutena = $array['pa_bez-glyutena']->name;
+				// echo '<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-yellow">';
+				// echo $bezglyutena;
+				// echo '</span>';
+			}
+			?>
 
 				<?php if (isset($array['pa_vegan'])) {
-					$vegan = $array['pa_vegan']->name;
-					echo '<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-light-green">';
-					echo $vegan;
-					echo '</span>';
-				}
-				?>
+				// $vegan = $array['pa_vegan']->name;
+				// echo '<span class="text-xs text-white font-medium py-2 px-5 rounded-3xl bg-light-green">';
+				// echo $vegan;
+				// echo '</span>';
+			}
+			?>
 			</div>
 
 			<p class="text-xl font-bold mb-5">Пищевая ценность:</p>
 			<?php
-			echo "<p class='text-lg'>Жиры: {$zhiry}, Белки: 0 г,</p>";
+			// echo "<p class='text-lg'>Жиры: {$zhiry}, Белки: 0 г,</p>";
 			?>
 			<p class="text-lg mb-5">Калорийность:
 				<?php echo $kkal; ?> ккал
@@ -135,7 +135,7 @@ if (post_password_required()) {
 				<li>
 					<p class="font-medium">Объем</p>
 					<p>
-						<?php echo $obem; ?>
+						<?php echo $obem; ?> 
 					</p>
 				</li>
 				<li>
